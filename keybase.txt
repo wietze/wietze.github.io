@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/wietze
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.wietzebeukema.nl
+  * I am wietze (https://keybase.io/wietze) on keybase.
+  * I have a public key ASC37hiGE1DHyozgRxU_FibTuVbuTB4qdMXEmvqDVPoajwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120dd2644b892809aa80cd6425a52e491e308c72759a12fa46da95d46f7be33fc0c0a",
+      "host": "keybase.io",
+      "kid": "0120b7ee18861350c7ca8ce047153f1626d3b956ee4c1e2a74c5c49afa8354fa1a8f0a",
+      "uid": "7d676435776d1686cc193d99af413d19",
+      "username": "wietze"
+    },
+    "merkle_root": {
+      "ctime": 1510824908,
+      "hash": "62d4605b85389ba80383bd2b833c10c5c159804db71184cfd6f6e23cd133e9965a115092425324ca73880ab6183843341400efa85b315d46a54a7efb2d23f0b6",
+      "hash_meta": "5f9bbae3bfe07549a952cf3f650aff14c091ff460d96b20534cc5f0f44b4d8af",
+      "seqno": 1710454
+    },
+    "service": {
+      "hostname": "www.wietzebeukema.nl",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.34"
+  },
+  "ctime": 1510824960,
+  "expire_in": 504576000,
+  "prev": "70c52c62a38c71819a2437a66feb67d6f64c19cc89eb1747191469ec34c13229",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgt+4YhhNQx8qM4EcVPxYm07lW7kweKnTFxJr6g1T6Go8Kp3BheWxvYWTFA0t7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZGQyNjQ0Yjg5MjgwOWFhODBjZDY0MjVhNTJlNDkxZTMwOGM3Mjc1OWExMmZhNDZkYTk1ZDQ2ZjdiZTMzZmMwYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYjdlZTE4ODYxMzUwYzdjYThjZTA0NzE1M2YxNjI2ZDNiOTU2ZWU0YzFlMmE3NGM1YzQ5YWZhODM1NGZhMWE4ZjBhIiwidWlkIjoiN2Q2NzY0MzU3NzZkMTY4NmNjMTkzZDk5YWY0MTNkMTkiLCJ1c2VybmFtZSI6IndpZXR6ZSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUxMDgyNDkwOCwiaGFzaCI6IjYyZDQ2MDViODUzODliYTgwMzgzYmQyYjgzM2MxMGM1YzE1OTgwNGRiNzExODRjZmQ2ZjZlMjNjZDEzM2U5OTY1YTExNTA5MjQyNTMyNGNhNzM4ODBhYjYxODM4NDMzNDE0MDBlZmE4NWIzMTVkNDZhNTRhN2VmYjJkMjNmMGI2IiwiaGFzaF9tZXRhIjoiNWY5YmJhZTNiZmUwNzU0OWE5NTJjZjNmNjUwYWZmMTRjMDkxZmY0NjBkOTZiMjA1MzRjYzVmMGY0NGI0ZDhhZiIsInNlcW5vIjoxNzEwNDU0fSwic2VydmljZSI6eyJob3N0bmFtZSI6Ind3dy53aWV0emViZXVrZW1hLm5sIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMzQifSwiY3RpbWUiOjE1MTA4MjQ5NjAsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiNzBjNTJjNjJhMzhjNzE4MTlhMjQzN2E2NmZlYjY3ZDZmNjRjMTljYzg5ZWIxNzQ3MTkxNDY5ZWMzNGMxMzIyOSIsInNlcW5vIjoyNCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDX0F73YQqZYUHz9I3Yg6p/IbexEKVmgcEJEJcQTcRWakH6IwsTC4tRY1RBa/txRWvGwBgDsej0Q2MZ3HvODbYAqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQg2P4EuBTeFikcLjKV7lQaMJlL5tNzQdQZCuPjQBQIki+jdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/wietze
+
+==================================================================
