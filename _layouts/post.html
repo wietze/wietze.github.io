@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Wietze">
+    {% assign url = site.url | append: site.baseurl | append: page.url %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    {% if site.favicon %}<link rel="icon" type="image/x-icon" href="{{ site.favicon_location }}">{% endif %}
+    <link rel="author" href="https://twitter.com/wietze">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container content">
+            {{ content }}
+            {% if site.footer == true %}
+                <hr />
+                <div class="navbar">
+                    <a id="author-name" class="alignable pull-left" href="/">{{ site.title }}</a>
+                    <div style="clear:both">{{site.subtitle}}</div>
+                    <ul id="navlist" class="alignable pull-right navbar-ul">
+                        {% for x in site.nav %}
+                            <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
+                            {% if forloop.last == false %}
+                                /
+                            {% endif %}
+                                </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <hr />
+                <p style="text-align: center; margin-bottom: 10px">
+                <a href="{{ site.footer_url }}" style="color: black"><small>{{ site.footer_text }}</small></a>
+                </p>
+            {% endif %}
+            <div>
+                    <h2>Most recent posts</h2>
+                    <table>
+                    {% for post in site.posts limit:5 %}
+                    <tr><td><a href="{{ post.url }}">{{ post.title }}</a></td></tr>
+                    {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

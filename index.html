@@ -1,3 +1,6 @@
+---
+#
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,6 +149,107 @@
   </div>
 
   <div class="container">
+    <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
+      <h1 style="margin-bottom: 10px;" id="publications">Literature</h1>
+    </div>
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html';" style="cursor: pointer;">Bottomley, Beukema. (2018, July). Signal the ATT&amp;CK: Part 2 - Security Orchestration and Alert Fatigue. PwC UK Research Blog.</td>
+          <td>
+            <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html">
+              <img src="img/html.svg" style="width: 19px;" alt="html" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html';" style="cursor: pointer;">Bottomley, Beukema. (2018, March). Signal the ATT&amp;CK: Part 1 - Tanium Signals and MITRE Caldera. PwC UK Research Blog.</td>
+          <td>
+            <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html">
+              <img src="img/html.svg" style="width: 19px;" alt="html" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='http://essay.utwente.nl/70560/';" style="cursor: pointer;">Beukema, W.J.B. (2016, July). Enhancing Network Intrusion Detection through Host Clustering.
+            <em>Master's dissertation</em>.</td>
+          <td>
+            <a href="http://essay.utwente.nl/70560/">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf';"
+            style="cursor: pointer;">Beukema, W.J.B. (2014, June). Formalising the Bitcoin Protocol: making it a bit better. 21st Twente Student Conference
+            on IT.
+            <em>Bachelor's dissertation</em>.</td>
+          <td>
+            <a href="http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='literature/Beukema,%20Noort,%20De%20Vries%20-%20Changing%20People\'s%20Behaviour%20towarsd%20Unsecured%20Wi-Fi%20Hotspots.pdf';"
+            style="cursor: pointer;">Beukema, Noort, De Vries (2015, January). Changing People's Behaviour towards Unsecured Wi-Fi Hotspots. </td>
+          <td>
+            <a href="literature/Beukema,%20Noort,%20De%20Vries%20-%20Changing%20People's%20Behaviour%20towarsd%20Unsecured%20Wi-Fi%20Hotspots.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf';"
+            style="cursor: pointer;">Beukema, W.J.B. (2015, April). Strong cryptography in the 21th century: the key to democracy?. </td>
+          <td>
+            <a href="literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, May). Privacy-centric cryptocurrencies. </td>
+          <td>
+            <a href="literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='literature/Beukema,%20WJB%20-%20RFC%206960.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, June). Online Certificate Status Protocol (OCSP) - An evaluation. </td>
+          <td>
+            <a href="literature/Beukema,%20WJB%20-%20RFC%206960.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, July). Censorship-avoidance for Tor. </td>
+          <td>
+            <a href="literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
+      <h1 style="margin-bottom: 10px;" id="publications">Posts</h1>
+    </div>
+    <table class="table table-striped table-hover ">
+      <tbody>
+        {% for post in site.posts %}
+        <tr style="cursor: pointer;" onclick="document.location='{{ post.url }}';">
+          <td style="width: 120px; font-style: italic">{{ post.date | date: "%Y-%m-%d" }}</td>
+          <td>{{ post.title }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;" id="projecten">
       <h1 style="margin-bottom: 10px;">Projects</h1>
     </div>
@@ -308,92 +412,6 @@
         <br />
       </div>
     </div>
-
-    <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
-      <h1 style="margin-bottom: 10px;" id="publications">Literature</h1>
-    </div>
-    <table class="table table-striped table-hover ">
-      <tbody>
-        <tr>
-          <td onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html';" style="cursor: pointer;">Bottomley, Beukema. (2018, July). Signal the ATT&amp;CK: Part 2 - Security Orchestration and Alert Fatigue. PwC UK Research Blog.</td>
-          <td>
-            <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html">
-              <img src="img/html.svg" style="width: 19px;" alt="html" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html';" style="cursor: pointer;">Bottomley, Beukema. (2018, March). Signal the ATT&amp;CK: Part 1 - Tanium Signals and MITRE Caldera. PwC UK Research Blog.</td>
-          <td>
-            <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html">
-              <img src="img/html.svg" style="width: 19px;" alt="html" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='http://essay.utwente.nl/70560/';" style="cursor: pointer;">Beukema, W.J.B. (2016, July). Enhancing Network Intrusion Detection through Host Clustering.
-            <em>Master's dissertation</em>.</td>
-          <td>
-            <a href="http://essay.utwente.nl/70560/">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2014, June). Formalising the Bitcoin Protocol: making it a bit better. 21st Twente Student Conference
-            on IT.
-            <em>Bachelor's dissertation</em>.</td>
-          <td>
-            <a href="http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='literature/Beukema,%20Noort,%20De%20Vries%20-%20Changing%20People\'s%20Behaviour%20towarsd%20Unsecured%20Wi-Fi%20Hotspots.pdf';"
-            style="cursor: pointer;">Beukema, Noort, De Vries (2015, January). Changing People's Behaviour towards Unsecured Wi-Fi Hotspots. </td>
-          <td>
-            <a href="literature/Beukema,%20Noort,%20De%20Vries%20-%20Changing%20People's%20Behaviour%20towarsd%20Unsecured%20Wi-Fi%20Hotspots.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2015, April). Strong cryptography in the 21th century: the key to democracy?. </td>
-          <td>
-            <a href="literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, May). Privacy-centric cryptocurrencies. </td>
-          <td>
-            <a href="literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20RFC%206960.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, June). Online Certificate Status Protocol (OCSP) - An evaluation. </td>
-          <td>
-            <a href="literature/Beukema,%20WJB%20-%20RFC%206960.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2015, July). Censorship-avoidance for Tor. </td>
-          <td>
-            <a href="literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf">
-              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
 
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
       <h1 style="margin-bottom: 10px;" id="social">Social</h1>
