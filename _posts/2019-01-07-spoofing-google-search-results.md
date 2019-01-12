@@ -6,6 +6,11 @@ title: Spoofing Google Search results
 ***TL;DR*** -
 *By adding two parameters to any Google Search URL, you can replace search results with a Knowledge Graph card of your choice. A malicious user can use this to generate false information or 'fake news'.*
 
+ ***Update*** -
+ *Two days after the publication of this blog post, Google [seems to have fixed](https://twitter.com/Wietze/status/1083658736248541184) the issue, after TechCrunch [asked the firm](https://techcrunch.com/2019/01/09/a-simple-bug-makes-it-easy-to-spoof-google-search-results-into-spreading-misinformation/) whether it was planning on taking any action. Although no official announcement was made, it looks like the* `kgmid` *parameter has been disabled. As a result, the flaw described below is no longer working.*
+
+----
+
 ## Knowledge Graph
 A few years ago, when you entered a search query into Google Search , you would simply get a list of search results. When you do the same now, you get all sorts of extra information supplied by Google. For instance, if you search for 'UNICEF', you'll see a box next to the search results with some key facts about this organisation. This feature is called Knowledge Graph.
 
