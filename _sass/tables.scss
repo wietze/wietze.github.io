@@ -32,3 +32,7 @@ table tr th :first-child, table tr td :first-child {
 table tr th :last-child, table tr td :last-child {
     margin: 0;
 }
+
+.overview-table, .overview-table > tbody > tr > td {
+    border: 0px;
+}

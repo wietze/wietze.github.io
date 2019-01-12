@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog - Wietze
+permalink: blog/index.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Wietze">
+    {% assign url = site.url | append: site.baseurl | append: page.url %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    {% if site.favicon %}
+    <link rel="icon" type="image/x-icon" href="{{ site.favicon_location }}">{% endif %}
+    <link rel="author" href="https://twitter.com/wietze">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container content">
+            <h1>Blog posts</h1>
+            <table class="overview-table">
+                <tbody>
+                    {% for post in site.posts %}
+                    <tr style="cursor: pointer;" onclick="document.location='{{ post.url }}';">
+                        <td style="width: 120px; font-style: italic">{{ post.date | date: "%Y-%m-%d" }}</td>
+                        <td>{{ post.title }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
