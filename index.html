@@ -109,10 +109,6 @@
 </head>
 
 <body>
-  <script>
-    if (window.location.protocol === "http:")
-      window.location.protocol = "https";
-  </script>
   <div style="width: 100%; min-height: 230px; background-color: #2F638B;">
     <div class="container">
       <div class="jumbotron row" style=" padding: 15px 0px; background-color: rgba(0,0,0,0); margin: 20px 0px;">
@@ -150,7 +146,7 @@
 
   <div class="container">
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
-      <h1 style="margin-bottom: 10px;" id="publications">Literature</h1>
+      <h1 style="margin-bottom: 10px;" id="publications">Publications</h1>
     </div>
     <table class="table table-striped table-hover ">
       <tbody>
@@ -180,12 +176,12 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf';"
+          <td onclick="document.location='https://pdfs.semanticscholar.org/eb8b/6c8da999d74d2fe49d666fa9b7b0128c2db6.pdf';"
             style="cursor: pointer;">Beukema, W.J.B. (2014, June). Formalising the Bitcoin Protocol: making it a bit better. 21st Twente Student Conference
             on IT.
             <em>Bachelor's dissertation</em>.</td>
           <td>
-            <a href="http://referaat.cs.utwente.nl/conference/21/paper/7450/formalising-the-bitcoin-protocol.pdf">
+            <a href="https://pdfs.semanticscholar.org/eb8b/6c8da999d74d2fe49d666fa9b7b0128c2db6.pdf">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
             </a>
           </td>
@@ -237,9 +233,9 @@
 
 
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
-      <h1 style="margin-bottom: 10px;" id="publications">Posts</h1>
+      <h1 style="margin-bottom: 10px;" id="publications"><a href="/blog" style="color: inherit;">Posts</a></h1>
     </div>
-    <table class="table table-striped table-hover ">
+    <table class="table table-striped table-hover">
       <tbody>
         {% for post in site.posts %}
         <tr style="cursor: pointer;" onclick="document.location='{{ post.url }}';">
