@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: / 
+Allow: /powershell-securestring-decoder
+Allow: /bsides-ldn-2019
+Disallow: /
