@@ -57,6 +57,10 @@
         background: #333;
         color: white;
         padding: 3px;
+        display: inline-block;
+        max-width: 100%;
+        word-wrap: anywhere;
+        white-space: break-spaces;
     }
     img {
         text-align: center;
