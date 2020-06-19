@@ -61,7 +61,7 @@
             <h2>Most recent posts</h2>
             <table>{% for post in site.posts limit:5 %}
                 <tr>
-                    <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+                    <td><a href="{{ post.url }}">{{ post.title | markdownify | strip_html | smartify }}</a></td>
                 </tr>{% endfor %}
             </table>
         </footer>

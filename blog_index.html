@@ -28,7 +28,7 @@ permalink: blog/index.html
                     {% for post in site.posts %}
                     <tr style="cursor: pointer;" onclick="document.location='{{ post.url }}';">
                         <td style="width: 120px; font-style: italic">{{ post.date | date: "%Y-%m-%d" }}</td>
-                        <td>{{ post.title }}</td>
+                        <td>{{ post.title | markdownify | strip_html | smartify }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
