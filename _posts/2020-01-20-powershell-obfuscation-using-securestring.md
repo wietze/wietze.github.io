@@ -1,11 +1,10 @@
 ---
 layout: post
-title: PowerShell Obfuscation using SecureString
+title: PowerShell Obfuscation using `SecureString`
+tldr: PowerShell has built-in functionality to save sensitive plaintext data to an encrypted object called `SecureString`. Malicious actors have exploited this functionality as a means to obfuscate PowerShell commands. This blog post discusses `SecureString`, examples seen in the wild, and presents a tool [[8](https://wietze.github.io/powershell-securestring-decoder/)] that helps analyse `SecureString` obfuscated commands.
+image: /assets/2020-01-18-powershell-securestring-2.png
+tags: [powershell, securestring, ConvertFrom-SecureString, ConvertTo-SecureString, obfuscation, AES, encoding, decoding, decoder]
 ---
-# PowerShell Obfuscation using `SecureString`
-***TL;DR*** - 
-*PowerShell has built-in functionality to save sensitive plaintext data to an encrypted object called `SecureString`. Malicious actors have exploited this functionality as a means to obfuscate PowerShell commands. This blog post discusses `SecureString`, examples seen in the wild, and [presents a tool][8] that helps analyse `SecureString` obfuscated commands.*
-
 
 ## PowerShell obfuscation
 If you are a threat hunter, you will be well familiar with PowerShell and common obfuscation techniques. The obvious one is Base64 encoding, but other encoding techiques (gzip, XOR, etc), string techniques (escaping, format string, concat, etc.), downloading & executing in memory are just a few other ways that might help attackers stay under the radar. You might have come across the excellent talk by Daniel Bohannon on PowerShell obfuscation techniques [[1]], in which various obuscation and detection evasion techniques using PowerShell are explained.

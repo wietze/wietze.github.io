@@ -1,6 +1,7 @@
 
 title: "Wietze"
 subtitle: Cyber troublemaker ｜ Threat Detection and Response ｜ <a href="https://www.twitter.com/wietze">@Wietze</a>
+post_tags: [cyber, threat detection, cyber threat, cyber threat detection, edr, endpoint, blue team, blue teaming, red team, red teaming, threat hunting, threat hunter, hunting]
 sass:
     style: compressed
     sass_dir: _sass

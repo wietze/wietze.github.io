@@ -51,6 +51,19 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+h1 {
+    font-size: 32px;
+}
+h1>code {
+    font-size: 24px;
+}
+header>p {
+    font-style: italic;
+}
+header>p::before{
+    content:"TL;DR – ";
+    font-weight: bold;
+}
 
 /*
  * Navbar
@@ -158,6 +171,82 @@ hr {
 	#navlist li.nav-list {
 		margin: 0;
 	}
+}
+
+.post_date {
+    color: #BBBBBB;
+    font-style: italic;
+    text-align: right;
+    width: 100%;
+}
+
+// Data tables
+.table-wrapper {
+    overflow-y: scroll;
+    height: 300px;
+    font-size: 70%;
+}
+
+.table-wrapper>table {
+    table-layout: fixed;
+    width: 650px;
+}
+
+.data-table {
+    font-size: 70%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dataTables_wrapper {
+    padding: 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.dataTables_wrapper>.table {
+    margin-top: 5px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.dataTables_wrapper>.table>table {
+    margin-top: 0px;
+    table-layout: fixed;
+}
+
+.dataTables_filter {
+    text-align: right;
+    width: 270px;
+    margin-left: auto;
+}
+
+.dataTables_filter input {
+    margin-left: 5px;
+}
+
+.data-table td {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.sorting_asc::after {
+    content: " ▲";
+}
+
+.sorting_desc::after {
+    content: " ▼";
+}
+
+// DLL Hijack table specific
+.hijack-table td:nth-child(1) {
+    text-align: center;
+}
+.hijack-table th:nth-child(1) {
+    width: 50px;
 }
 
 @import "typography";

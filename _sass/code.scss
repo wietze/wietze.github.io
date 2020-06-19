@@ -8,19 +8,21 @@ code {
     white-space: break-spaces;
 }
 
+pre>code { width: 100%; }
+
 code > .hll { background-color: #ffffcc }
-code > .c { color: #586E75 } /* Comment */
+code > .c { color: #78877d } /* Comment */
 code > .err { color: #CCCCCC } /* Error */
 code > .g { color: #CCCCCC } /* Generic */
-code > .k { color: #859900 } /* Keyword */
+code > .k { color: #55859b } /* Keyword */
 code > .l { color: #CCCCCC } /* Literal */
 code > .n { color: #CCCCCC } /* Name */
 code > .o { color: #859900 } /* Operator */
 code > .x { color: #f83733 } /* Other */
 code > .p { color: #CCCCCC } /* Punctuation */
-code > .cm { color: #586E75 } /* Comment.Multiline */
+code > .cm { color: #78877d } /* Comment.Multiline */
 code > .cp { color: #859900 } /* Comment.Preproc */
-code > .c1 { color: #586E75 } /* Comment.Single */
+code > .c1 { color: #78877d } /* Comment.Single */
 code > .cs { color: #859900 } /* Comment.Special */
 code > .gd { color: #33c6bb } /* Generic.Deleted */
 code > .ge { color: #CCCCCC; font-style: italic } /* Generic.Emph */
