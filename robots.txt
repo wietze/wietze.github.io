@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /powershell-securestring-decoder
 Allow: /bsides-ldn-2019
+Allow: /blog/
 Disallow: /
