@@ -1636,7 +1636,7 @@ Some caveats:
 * Some applications come with a GUI, or some other visual element that gives away the binary was executed. This also includes error messages: required DLLs might be missing, and the hijacked DLL obviously lacks the original functionality. Attackers are less likely to target such applications for DLL hijacking purposes. 
 * DLLs of which the original version was written in C++ have not been taken into account.
 
-_A CVS version of the full list can be found on GitHub [[14]]._
+_A CSV version of the full list can be found on GitHub [[14]]._
 
 ## Combining with UAC bypass
 
