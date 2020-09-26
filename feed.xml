@@ -1,0 +1,23 @@
+---
+permalink: blog/feed.xml
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>{{ '/blog/feed.xml' | absolute_url }}</id>
+    <link href="{{ '/blog/feed.xml' | absolute_url }}" rel="self" type="application/atom+xml" />
+    <link href="{{ '/blog/' | absolute_url }}" rel="alternate" type="text/html" />
+    {% for post in site.posts limit:1 %}<updated>{{ post.date | date_to_xmlschema }}</updated> {%endfor%}
+    <title type="html">@Wietze - Blog</title>{% for post in site.posts %}
+    <entry>
+        <title>{{ post.title | markdownify | strip_html | smartify | xml_escape}}</title>
+        <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | markdownify | strip_html | smartify | xml_escape }}" />
+        <id>{{ post.url | absolute_url }}</id>
+        <published>{{ post.date | date_to_xmlschema }}</published>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <author><name>@Wietze</name></author>
+        <summary>{{ post.tldr | xml_escape}}</summary>
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.baseurl }}{{ post.image | absolute_url }}" />
+        <media:content medium="image" url="{{ site.baseurl }}{{ post.image | absolute_url }}" xmlns:media="http://search.yahoo.com/mrss/" />
+    </entry>
+{% endfor %}</feed>
