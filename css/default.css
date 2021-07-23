@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Bold-webfont.woff') format('woff'), url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular-webfont.woff') format('woff'), url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.compare {
+    max-width: 100%;
+}
+
+.compare .factor {
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.socbutton {
+    width: 120px;
+    border: 1px solid #bbb;
+}
+
+p.social-buttons>a {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+p.social-buttons>a:hover {
+    text-decoration: none;
+}
+
+body {
+    padding-bottom: 30px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.panel-body {
+    display: none;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.ico {
+    float: left;
+    margin-right: 5px;
+    max-width: 16px;
+    padding: 0px;
+    margin-top: 2px;
+}
+
+.intro-icons {
+    color: white;
+    margin-right: 10px;
+}
+
+.indent {
+    padding-left: 30px;
+    text-indent: -14px;
+}
+
+.indent2 {
+    padding-left: 55px;
+    text-indent: -75px;
+}
+
+.publications td {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 540px) {
+    .namess {
+        margin-top: 30px !important;
+        margin-bottom: 50px !important;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .namess {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    #avatar {
+        display: none;
+    }
+}

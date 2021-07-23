@@ -11,104 +11,9 @@
   <meta name="author" content="Wietze Beukema">
   <title>Wietze Beukema</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
   <link rel="alternate" type="application/rss+xml" title="@Wietze - Blog" href="/blog/feed.xml" />
-
-  <style>
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('fonts/OpenSans-Bold-webfont.eot');
-      src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
-        url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
-        url('fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
-      font-weight: bold;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('fonts/OpenSans-Regular-webfont.eot');
-      src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
-        url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-        url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    .compare {
-      max-width: 100%;
-    }
-
-    .compare .factor {
-      width: 100px;
-      font-weight: bold;
-      vertical-align: top;
-    }
-
-    .socbutton {
-      width: 120px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      border: 1px solid #bbb;
-    }
-
-    body {
-      padding-bottom: 30px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .panel-body {
-      display: none;
-    }
-
-    .panel-heading {
-      cursor: pointer;
-    }
-
-    .ico {
-      float: left;
-      margin-right: 5px;
-      max-width: 16px;
-      padding: 0px;
-      margin-top: 2px;
-    }
-
-    .intro-icons {
-      color: white;
-      margin-right: 10px;
-    }
-
-    .indent {
-      padding-left: 30px;
-      text-indent: -14px;
-    }
-
-    .indent2 {
-      padding-left: 55px;
-      text-indent: -75px;
-    }
-
-    @media screen and (max-width: 540px) {
-      .namess {
-        margin-top: 30px !important;
-        margin-bottom: 50px !important;
-      }
-    }
-
-    @media screen and (max-width: 455px) {
-      .namess {
-        margin-top: 0px !important;
-        margin-bottom: 0px !important;
-      }
-
-      #avatar {
-        display: none;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -118,7 +23,7 @@
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding: 0px;">
           <div style="float: left; width: 100%; max-width: 175px; height: 100%; margin-right: 20px;" id="avatar">
             <img src="https://s.gravatar.com/avatar/65643c7a5680cb9f2e4be9a003cbf999?s=200"
-              style="width: 100%; height: 100%; border: 1px solid white;" alt="Foto van Wietze" />
+              style="width: 100%; height: 100%; border: 1px solid white;" alt="Photo of Wietze" />
           </div>
           <h1 style="font-size: 45px; font-weight: bold; margin: 0px; margin-bottom: 10px; color: white;"
             class="namess">Wietze Beukema</h1>
@@ -135,9 +40,11 @@
             </div>
             <div class="indent">
               <span class="glyphicon glyphicon-console intro-icons" aria-hidden="true"></span>Tech enthusiast, security
-              fanatic with an interest in politics and society</div>
+              fanatic with an interest in politics and society
+            </div>
             <div class="indent">
-              <span class="glyphicon glyphicon-globe intro-icons" aria-hidden="true"></span>London, United Kingdom</div>
+              <span class="glyphicon glyphicon-globe intro-icons" aria-hidden="true"></span>London, United Kingdom
+            </div>
           </div>
         </div>
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"
@@ -156,11 +63,22 @@
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
       <h1 style="margin-bottom: 10px;" id="publications">Publications</h1>
     </div>
-    <table class="table table-striped table-hover ">
+    <table class="table table-striped table-hover publications">
       <tbody>
+
+
         <tr>
-          <td onclick="document.location='/mitre-eu-2020/slides.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2020, October). Hijacking DLLs in Windows. Sixth EU MITRE ATT&CK® Community Workshop.</td>
+          <td>Beukema, W.J.B. (2021, July). Exploring Windows Command-Line Obfuscation. SANS Institute DFIR Summit 2021.
+          </td>
+          <td>
+            <a href="literature/Beukema, WJB - Exploring Windows Command-Line Obfuscation.pdf">
+              <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Beukema, W.J.B. (2020,
+            October). Hijacking DLLs in Windows. Sixth EU MITRE ATT&CK® Community Workshop.</td>
           <td>
             <a href="/mitre-eu-2020/slides.pdf">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
@@ -168,8 +86,7 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='https://www.pwc.co.uk/issues/imitation-game-attacker-emulation.html';"
-            style="cursor: pointer;">Beukema, W.J.B. (2019, August). The Imitation Game: Attacker Emulation. PwC UK
+          <td>Beukema, W.J.B. (2019, August). The Imitation Game: Attacker Emulation. PwC UK
             Research Blog.</td>
           <td>
             <a href="https://www.pwc.co.uk/issues/imitation-game-attacker-emulation.html">
@@ -178,7 +95,7 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='/bsides-ldn-2019/slides.pdf';" style="cursor: pointer;">Beukema, W.J.B. (2019,
+          <td>Beukema, W.J.B. (2019,
             June). The Imitation Game: Attacker Emulation. Security BSides London 2019.</td>
           <td>
             <a href="/bsides-ldn-2019/slides.pdf">
@@ -187,9 +104,7 @@
           </td>
         </tr>
         <tr>
-          <td
-            onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html';"
-            style="cursor: pointer;">Bottomley, Beukema. (2018, July). Signal the ATT&amp;CK: Part 2 - Security
+          <td>Bottomley, Beukema. (2018, July). Signal the ATT&amp;CK: Part 2 - Security
             Orchestration and Alert Fatigue. PwC UK Research Blog.</td>
           <td>
             <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-2.html">
@@ -198,9 +113,7 @@
           </td>
         </tr>
         <tr>
-          <td
-            onclick="document.location='https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html';"
-            style="cursor: pointer;">Bottomley, Beukema. (2018, March). Signal the ATT&amp;CK: Part 1 - Tanium Signals
+          <td>Bottomley, Beukema. (2018, March). Signal the ATT&amp;CK: Part 1 - Tanium Signals
             and MITRE Caldera. PwC UK Research Blog.</td>
           <td>
             <a href="https://www.pwc.co.uk/issues/cyber-security-data-privacy/research/signal-att-and-ck-part-1.html">
@@ -209,9 +122,10 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='http://essay.utwente.nl/70560/';" style="cursor: pointer;">Beukema, W.J.B.
+          <td>Beukema, W.J.B.
             (2016, July). Enhancing Network Intrusion Detection through Host Clustering.
-            <em>Master's dissertation</em>.</td>
+            <em>Master's dissertation</em>.
+          </td>
           <td>
             <a href="http://essay.utwente.nl/70560/">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
@@ -219,12 +133,11 @@
           </td>
         </tr>
         <tr>
-          <td
-            onclick="document.location='https://pdfs.semanticscholar.org/eb8b/6c8da999d74d2fe49d666fa9b7b0128c2db6.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2014, June). Formalising the Bitcoin Protocol: making it a bit
+          <td>Beukema, W.J.B. (2014, June). Formalising the Bitcoin Protocol: making it a bit
             better. 21st Twente Student Conference
             on IT.
-            <em>Bachelor's dissertation</em>.</td>
+            <em>Bachelor's dissertation</em>.
+          </td>
           <td>
             <a href="https://pdfs.semanticscholar.org/eb8b/6c8da999d74d2fe49d666fa9b7b0128c2db6.pdf">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
@@ -232,9 +145,7 @@
           </td>
         </tr>
         <tr>
-          <td
-            onclick="document.location='literature/Beukema,%20Noort,%20De%20Vries%20-%20Changing%20People\'s%20Behaviour%20towarsd%20Unsecured%20Wi-Fi%20Hotspots.pdf';"
-            style="cursor: pointer;">Beukema, Noort, De Vries (2015, January). Changing People's Behaviour towards
+          <td>Beukema, Noort, De Vries (2015, January). Changing People's Behaviour towards
             Unsecured Wi-Fi Hotspots. </td>
           <td>
             <a
@@ -244,9 +155,7 @@
           </td>
         </tr>
         <tr>
-          <td
-            onclick="document.location='literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2015, April). Strong cryptography in the 21th century: the key to
+          <td>Beukema, W.J.B. (2015, April). Strong cryptography in the 21th century: the key to
             democracy?. </td>
           <td>
             <a href="literature/Beukema,%20WJB%20-%20Strong%20cryptography%20in%20the%2021th%20century.pdf">
@@ -255,8 +164,7 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2015, May). Privacy-centric cryptocurrencies. </td>
+          <td>Beukema, W.J.B. (2015, May). Privacy-centric cryptocurrencies. </td>
           <td>
             <a href="literature/Beukema,%20WJB%20-%20Privacy-centric%20cryptocurrencies.pdf">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
@@ -264,7 +172,7 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20RFC%206960.pdf';" style="cursor: pointer;">
+          <td>
             Beukema, W.J.B. (2015, June). Online Certificate Status Protocol (OCSP) - An evaluation. </td>
           <td>
             <a href="literature/Beukema,%20WJB%20-%20RFC%206960.pdf">
@@ -273,8 +181,7 @@
           </td>
         </tr>
         <tr>
-          <td onclick="document.location='literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf';"
-            style="cursor: pointer;">Beukema, W.J.B. (2015, July). Censorship-avoidance for Tor. </td>
+          <td>Beukema, W.J.B. (2015, July). Censorship-avoidance for Tor. </td>
           <td>
             <a href="literature/Beukema,%20WJB%20-%20Censorship%20Avoidance%20for%20Tor.pdf">
               <img src="img/pdf.svg" style="width: 19px;" alt="pdf" />
@@ -350,7 +257,8 @@
               die ik heb kunnen testen."
               <br />
               <a href="http://computertotaal.nl/apps-software/gemistdownloader-2-0-20394">ComputerTotaal</a>: "[...] het
-              gratis programma GemistDownloader [is] echt een uitkomst!" - beoordeeling 9/10</td>
+              gratis programma GemistDownloader [is] echt een uitkomst!" - beoordeling 9/10
+            </td>
           </tr>
           <tr>
             <td colspan="2">&nbsp;</td>
@@ -402,7 +310,8 @@
             <td class="factor">Reviews</td>
             <td class="description">
               <a href="http://www.amberalertnederland.nl/News.aspx?newsid=371&amp;lang=nl">Persbericht AMBER Alert
-                Nederland</a>: "Meer dan 7.000 downloads Windows Phone App voor AMBER Alert"</td>
+                Nederland</a>: "Meer dan 7.000 downloads Windows Phone App voor AMBER Alert"
+            </td>
           </tr>
           <tr>
             <td colspan="2">&nbsp;</td>
@@ -456,7 +365,8 @@
                 target="_blank">Bol.com: showcase</a>
               <br />
               <a href="http://www.wp7.nl/8124/de-blauwe-app-bladeren-op-bol-com-met-je-windows-phone/"
-                target="_blank">WP7.nl</a>: "De Blauwe App is een simpel-ogende, maar erg goed functionerende app."</td>
+                target="_blank">WP7.nl</a>: "De Blauwe App is een simpel-ogende, maar erg goed functionerende app."
+            </td>
           </tr>
           <tr>
             <td colspan="2">&nbsp;</td>
@@ -476,18 +386,18 @@
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
       <h1 style="margin-bottom: 10px;" id="social">Social</h1>
     </div>
-    <p>
+    <p class="social-buttons">
       <a href="https://www.linkedin.com/in/wjbbeukema" target="_blank">
-        <img src="img/in.png" alt="SocialLogo1" class="socbutton" />
+        <img src="img/in.png" alt="LinkedIn" class="socbutton" />
       </a>
       <a href="https://www.twitter.com/wietze" target="_blank">
-        <img src="img/tw.png" alt="SocialLogo2" class="socbutton" style="background: #55acee;" />
+        <img src="img/tw.png" alt="Twitter" class="socbutton" style="background: #55acee;" />
       </a>
       <a href="https://www.github.com/wietze" target="_blank">
-        <img src="img/github.png" alt="github" class="socbutton" />
+        <img src="img/github.png" alt="GitHub" class="socbutton" />
       </a>
       <a href="https://www.keybase.io/wietze" target="_blank">
-        <img src="img/kb.png" alt="keybase" class="socbutton" />
+        <img src="img/kb.png" alt="Keybase" class="socbutton" />
       </a>
     </p>
 
@@ -515,11 +425,34 @@
         }
       </script>
       <noscript>[Enable JavaScript in order to see my email address.]</noscript>(<a
-        href="254EBE22A399442B3902B927B054B3066AF95F1D.asc">0x6AF95F1D</a>).</p>
+        href="254EBE22A399442B3902B927B054B3066AF95F1D.asc">0x6AF95F1D</a>).
+    </p>
   </div>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/twit.js"></script>
+  <script>$(document).ready(function () {
+
+      $('.publications tr').on('mouseup', function (e) {
+        var href = $(this).find("td>a[href]").attr("href");
+        if (href) {
+          console.log(e);
+          switch (e.which) {
+            // left click
+            case 1: {
+              window.location = href;
+              break;
+            }
+            // middle click
+            case 2: {
+              window.open(href);
+              break;
+            }
+          }
+        }
+      });
+
+    });</script>
 </body>
 
 </html>

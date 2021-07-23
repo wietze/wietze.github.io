@@ -11,9 +11,11 @@ $(document).ready(function () {
                 infoFiltered: "(filtered from <strong>_MAX_</strong> total entries)"
             }
         });
-        MergeGridCells();
-        table.on('draw', function () { MergeGridCells() })
-        table.columns.adjust().draw();
+        if($(".hijack-table").length){
+            MergeGridCells();
+            table.on('draw', function () { MergeGridCells() })
+            table.columns.adjust().draw();
+        }
     }
 });
 
