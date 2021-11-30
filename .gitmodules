@@ -1,4 +1,0 @@
-[submodule "bsides-london-2019"]
-	path = bsides-london-2019
-	url = https://github.com/wietze/bsides-ldn-2019.git
-	branch = gh-pages
