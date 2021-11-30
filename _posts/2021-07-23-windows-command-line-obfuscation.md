@@ -5,6 +5,7 @@ tldr: Many Windows applications have multiple ways in which the same command lin
 image: /assets/2021-07-23-certutil-obfuscated.png
 tags: [command line, command-line, cmd, command-line obfuscation, dosfuscation, command-line evasion, command-line bypass, parameter bypass, Unicode parameters, argument bypass, Unicode argument, dash, hyphen, invisible characters, quote parameters, quote arguments, flag, switch]
 js: true
+tweet: 1418562387175690242
 ---
 
 ## Command-line arguments

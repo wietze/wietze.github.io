@@ -4,6 +4,7 @@ title: Spoofing Google Search results
 tldr: By adding two parameters to any Google Search URL, you can replace search results with a Knowledge Graph card of your choice. A malicious user can use this to generate false information or 'fake news'.
 image: /assets/2019-01-07-knowledge-graph-2.jpg
 tags: [google, google search, fake news, misinformation, knowledge graph, knowledge card, google bug, google spoof, spoofing]
+tweet: 1082782973458608129
 ---
 
  ***Update*** -

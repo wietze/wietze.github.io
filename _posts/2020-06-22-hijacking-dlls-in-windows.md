@@ -5,6 +5,7 @@ tldr: DLL Hijacking is a popular technique for executing malicious payloads. Thi
 image: /assets/2020-06-22-winsat-dxgi-uac-bypass.jpg
 tags: [dll hijacking, dll load order hijacking, dll, dlls, dll sideloading, lolbins, uac bypass]
 js: true
+tweet: 1274981031536398336
 ---
 
 ## DLL Hijacking

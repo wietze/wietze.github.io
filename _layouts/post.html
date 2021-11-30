@@ -39,6 +39,26 @@
             <div class="post_date">Posted on {{ page.date | date: "%Y-%m-%d" }}</div>
         </article>
 
+        {% if page.tweet %}<div class="container"><hr />
+          <div id="tweet" tweetID="{{page.tweet}}"></div>
+        </div>
+
+        <script sync src="https://platform.twitter.com/widgets.js"></script>
+        <script>
+          window.onload = function () {
+            var tweet = document.getElementById("tweet");
+            var id = tweet.getAttribute("tweetID");
+            try {
+              twttr.widgets.createTweet(id, tweet, { conversation: "none", //cards: "hidden", // or visible
+                                                    theme: "light", // or dark
+                                                    width: 550,
+                                                    dnt: true});
+            } catch (e){
+              tweet.innerHTML = '<em>Find my tweet on this blog post <a href="https://www.twitter.com/wietze/status/{{page.tweet}}">here</a>.</em>';
+            }
+          };
+        </script>{% endif %}
+
         {% if site.footer == true %}<footer class="container">
             <hr />
             <div class="navbar">

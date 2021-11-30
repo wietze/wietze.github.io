@@ -249,6 +249,18 @@ header>p::before{
     width: 50px;
 }
 
+// Twitter
+#tweet {
+    width: 550px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#tweet iframe {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 @import "typography";
 @import "tables";
 @import "code";
