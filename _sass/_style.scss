@@ -249,6 +249,10 @@ header>p::before{
     width: 50px;
 }
 
+.env-table th:nth-child(1){
+    width: max-content
+}
+
 // Twitter
 #tweet {
     width: 550px !important;

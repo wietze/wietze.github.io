@@ -9,9 +9,11 @@ $(document).ready(function () {
                 info: "Showing <strong>_TOTAL_</strong> entries",
                 infoEmpty: "Showing 0 entries",
                 infoFiltered: "(filtered from <strong>_MAX_</strong> total entries)"
-            }
+            },
+            "order": [[0, "asc"], [1, "asc"]],
+            //"columnsDefs": [{ "width": "5%", "targets": 0 }]
         });
-        if($(".hijack-table").length){
+        if($(".hijack-table").length || $(".env-table").length){
             MergeGridCells();
             table.on('draw', function () { MergeGridCells() })
             table.columns.adjust().draw();

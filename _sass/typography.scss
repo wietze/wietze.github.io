@@ -67,3 +67,23 @@
         width: 100%;
     }
 }
+
+.footnotes {
+    font-size: smaller;
+    font-style: italic;
+
+    ol > li::before  {
+        font-size: x-small;
+        content: "*" counter(list, decimal) "";
+    }
+}
+
+a.footnote {
+    visibility: hidden;
+    font-size: 1px;
+}
+a.footnote::before {
+    font-size: small;
+    content: "*";
+    visibility:visible;
+}
