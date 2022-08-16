@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Save the Environment (Variable)
-tldr: By manipulating environment variables on process level, it is possible to let trusted application load arbitrary DLLs and execute malicious code. This post lists over 100 executables vulnerable to this type of DLL Hijacking on Windows 11 (21H2); it is demonstrated how this can achieved with just three lines of VBScript.
-image: /assets/2022-08-16-vbscript-example.jpg
+tldr: By manipulating environment variables on process level, it is possible to let trusted applications load arbitrary DLLs and execute malicious code. This post lists nearly 100 executables vulnerable to this type of DLL Hijacking on Windows 11 (21H2); it is demonstrated how this can achieved with just three lines of VBScript.
+image: /assets/2022-08-16-vbscript-example.png
 tags: [dll hijacking, environment variable, env variable, envvar, systemroot, windir, envvar dll hijacking, environment variable-based hijacking]
 js: true
-tweet: 
+tweet: 1559358985764933632
 ---
 
 
