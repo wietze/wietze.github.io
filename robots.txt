@@ -3,4 +3,5 @@ Allow: /powershell-securestring-decoder
 Allow: /bsides-ldn-2019
 Allow: /blog/
 Allow: /assets/
+Allow: /$
 Disallow: /
