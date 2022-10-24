@@ -8,6 +8,9 @@ js: true
 tweet: 1559358985764933632
 ---
 
+_This research was first presented at DEF CON 30; you can find the recording [here](https://www.youtube.com/watch?v=LxjnI5h_kls) and the slides [here](/literature/Beukema,%20WJB%20-%20Save%20The%20Environment%20(Variable).pdf)._
+
+----
 
 ## Environment variables
 
@@ -494,9 +497,6 @@ From a detection point of view, a few obvious things that can be done is to chec
 Hunting for the creation of DLL files with names that are known to be loaded by vulnerable applications, is an approach that won't work well [[14]]. A related but slightly more viable approach would be to look for the creation of certain folder structures in unexpected locations. For example, nearly all hijacking approaches that rely on `%SYSTEMROOT%` or `%WINDIR%` require a folder called `System32` to be created in a user-writable location. Generally, this should be rare - although some legitimate software appear to be doing this too, after excluding such instances this might be an easy approach to detect the most obvious form of environment variable-based DLL hijacking.
 
 That being said, if a vulnerable executable uses another environment variable, the above approach may not work either. It is therefore important not to focus solely on detecting the DLL hijacking itself, but more so on the activity that follows. Detecting activity that is rare for the process that performed it, is at the end of the day the best indicator something is wrong. Therefore, while your defences might not detect everything, the more they can detect, the harder it is for an attacker to go completely unnoticed.
-
-
-_This research was first presented at DEF CON 30; you can find the slides [here](/literature/Beukema,%20WJB%20-%20Save%20The%20Environment%20(Variable).pdf)._
 
 [1]: https://www.livingcomputers.org/UI/UserDocs/Unix-v7-1/UNIX_Programmers_Manual_Seventh_Edition_Vol_2_1983.pdf
 [2]: https://winworldpc.com/download/941ee628-bc8e-11e9-b7f9-fa163e9022f0

@@ -93,7 +93,9 @@
                 title="Beukema, W.J.B. (2022, August). Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint. DEF CON 30.">Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint</strong> &ndash; DEF CON 30</div></div>
             <div class="block publication-buttons">
               <div class="entry-link">
-                <a href="literature/Beukema,%20WJB%20-%20Save%20The%20Environment%20(Variable).pdf"> </a>
+                <a href="literature/Beukema,%20WJB%20-%20Save%20The%20Environment%20(Variable).pdf"> </a><a
+                href="https://github.com/wietze/windows-dll-env-hijacking" title="GitHub repo: wietze/windows-dll-env-hijacking"> </a><a
+                href="https://www.youtube.com/watch?v=LxjnI5h_kls" title="YouTube: DEF CON 30 - Wietze Beukema - Save Environment Variable - Hijacking Legit Apps w Minimal Footprint"></a>
               </div>
             </div>
           </td>
@@ -317,6 +319,40 @@
 
     <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;" id="projecten">
       <h1 style="margin-bottom: 10px;">Projects</h1>
+    </div>
+
+    <div id="HijackLibs" class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="https://hijacklibs.net/assets/img/dll.png" class="ico" alt="ico" />
+        <h3 class="panel-title" onclick="$('#hijacklibs-body').toggle();">HijackLibs.net</h3>
+      </div>
+      <div class="panel-body" id="hijacklibs-body">
+        <div style="float: right; margin-left: 10px; max-width: 35%;min-width: 200px;">
+          <a href="img/hijacklibs.png">
+            <img src="img/hijacklibs.png" alt="Screenshot of HijackLibs" style="width: 100%; border: 1px solid #aaa;" />
+          </a>
+        </div>
+        <p>HijackLibs.net provides an curated list of DLL Hijacking candidates. A mapping between DLLs and vulnerable executables is kept and can be searched via this website. Additionally, further metadata such as resources provide more context.</p><p>For defenders, this project can provide valuable information when trying to detect DLL Hijacking attempts. Although detecting DLL Hijacking isn't always without challenge, it is certainly possible to monitor for behaviour that may be indicative of abuse. To further support defenders, out-of-the-box Sigma rules are provided through this website. A Sigma feed containing detection rules for all entries part of this project is available too.</p><p>For red teamers, this project can help identify DLLs that can be used to achieve DLL Hijacking. The aim of this project is not to make it easy to abuse the recorded vulnerabilities; as such, PoCs, code templates or tuturials are not provided.</p>
+        <table class="compare">
+          <tr>
+            <td class="factor">Project start</td>
+            <td class="description">August 2022 - see <a href="https://twitter.com/wietze/status/1558910243588829184"><em class="fab fa-twitter btn-link"></em> Tweet</a></td>
+          </tr>
+          <tr>
+            <td class="factor">Technology</td>
+            <td class="description">GitHub Actions, HTML/JavaScript/CSS, YAML</td>
+          </tr>
+          <tr>
+            <td class="factor">Source Code</td>
+            <td class="description"><a href="https://github.com/wietze/hijacklibs">github.com/wietze/HijackLibs</a></td>
+          </tr>
+          <tr>
+            <td class="factor">Project Website</td>
+            <td class="description"><a href="https://hijacklibs.net/">HijackLibs.net</a></td>
+          </tr>
+        </table>
+        <br />
+      </div>
     </div>
 
     <div id="GemistDownloader" class="panel panel-primary">
