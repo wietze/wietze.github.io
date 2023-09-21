@@ -8,19 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% assign tags = page.tags | concat: site.post_tags %}<meta name="keywords" content="{{ tags | join: "," }}">
     <meta name="author" content="@Wietze">{% if page.tldr %}
-    <meta name="description" content="{{ page.tldr | markdownify | strip_html | smartify }}" />
-    <meta property="og:description" content="{{ page.tldr | markdownify | strip_html | smartify }}" />{% endif %}
-    <meta property="og:title" content="{{ page.title | markdownify | strip_html | smartify }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}" />
-    <meta property="og:article:author" content="@Wietze" />{% if page.image %}
-    <meta property="og:image" content="{{ og_url }}{{ page.image }}" />{% endif %}
-    <meta property="og:url" content="{{ og_url }}{{ page.url }}" />
+    <meta name="description" content="{{ page.tldr | markdownify | strip_html | smartify }}">
+    <meta property="og:description" content="{{ page.tldr | markdownify | strip_html | smartify }}">{% endif %}
+    <meta property="og:title" content="{{ page.title | markdownify | strip_html | smartify }}">
+    <meta property="og:type" content="article">
+    <meta property="og:article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
+    <meta property="og:article:author" content="@Wietze">{% if page.image %}
+    <meta property="og:image" content="{{ og_url }}{{ page.image }}">{% endif %}
+    <meta property="og:url" content="{{ og_url }}{{ page.url }}">
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    <link rel="alternate" type="application/rss+xml" title="@Wietze - Blog" href="/blog/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="@Wietze - Blog" href="/blog/feed.xml">
 
     <link rel="icon" type="image/x-icon" href="{{ site.favicon_location }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     <link rel="author" href="https://twitter.com/wietze">{% if page.js==true %}
     <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/js/jquery.dataTables.min.js"></script>
@@ -32,27 +33,24 @@
         <header class="container">
             <h1>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</h1>{% if page.tldr %}
             {{ page.tldr | markdownify | strip }}
-            <hr />{% endif %}
+            <hr>{% endif %}
         </header>
         <article class="container content">
             {{ content }}
             <div class="post_date">Posted on {{ page.date | date: "%Y-%m-%d" }}</div>
         </article>
 
-        {% if page.tweet %}<div class="container"><hr />
-          <div id="tweet" tweetID="{{page.tweet}}"></div>
+        {% if page.tweet %}<div class="container"><hr>
+          <div id="tweet" data-tweetid="{{page.tweet}}"></div>
         </div>
 
-        <script sync src="https://platform.twitter.com/widgets.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js"></script>
         <script>
           window.onload = function () {
             var tweet = document.getElementById("tweet");
-            var id = tweet.getAttribute("tweetID");
+            var id = tweet.dataset["tweetid"];
             try {
-              twttr.widgets.createTweet(id, tweet, { conversation: "none", //cards: "hidden", // or visible
-                                                    theme: "light", // or dark
-                                                    width: 550,
-                                                    dnt: true});
+              twttr.widgets.createTweet(id, tweet, { conversation: "none", theme: "light", width: 550, dnt: true });
             } catch (e){
               tweet.innerHTML = '<em>Find my tweet on this blog post <a href="https://www.twitter.com/wietze/status/{{page.tweet}}">here</a>.</em>';
             }
@@ -60,7 +58,7 @@
         </script>{% endif %}
 
         {% if site.footer == true %}<footer class="container">
-            <hr />
+            <hr>
             <div class="navbar">
                 <a id="author-name" class="alignable pull-left" href="/">{{ site.title }}</a>
                 <div style="clear:both">{{site.subtitle}}</div>
@@ -74,7 +72,7 @@
                     {% endfor %}
                 </ul>
             </div>
-            <hr />
+            <hr>
             <p style="text-align: center; margin-bottom: 10px">
                 <a href="{{ site.footer_url }}" style="color: black"><small>{{ site.footer_text }}</small></a>
             </p>{% endif %}

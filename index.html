@@ -13,8 +13,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/default.css" rel="stylesheet">
   <link href="css/fa.min.css" rel="stylesheet">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-  <link rel="alternate" type="application/rss+xml" title="@Wietze - Blog" href="/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="@Wietze - Blog" href="/blog/feed.xml">
 </head>
 
 <body>
@@ -23,8 +24,7 @@
       <div class="jumbotron row" style=" padding: 15px 0; background-color: rgba(0,0,0,0); margin: 20px 0;">
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding: 0;">
           <div style="float: left; width: 100%; max-width: 175px; height: 100%; margin-right: 20px;" id="avatar">
-            <img src="https://s.gravatar.com/avatar/65643c7a5680cb9f2e4be9a003cbf999?s=200"
-              style="width: 100%; height: 100%; border: 1px solid white;" alt="Photo of Wietze" />
+            <img src="https://s.gravatar.com/avatar/65643c7a5680cb9f2e4be9a003cbf999?s=200" style="width: 100%; height: 100%; border: 1px solid white;" alt="Photo of Wietze">
           </div>
           <h1 style="font-size: 45px; font-weight: bold; margin: 0; margin-bottom: 10px; color: white;"
             class="namess">Wietze Beukema</h1>
@@ -32,12 +32,7 @@
 
             <div class="indent">
               <i class="fas fa-briefcase intro-icons"></i>Cyber Threat Detection
-              &amp; Response at
-              <a href="https://www.crowdstrike.com/" target="_blank" style="color: #C2BEBE;">
-                <img src="img/crowdstrike.svg"
-                  style="width: 130px; height: 22px; vertical-align: bottom; margin: 0;"
-                  alt="CrowdStrike" />
-              </a>
+              &amp; Response
             </div>
             <div class="indent">
               <i class="fas fa-microchip intro-icons"></i>Tech enthusiast, security
@@ -52,9 +47,9 @@
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"
           style="background: white; border-radius: 3px; margin-top: 20px; padding: 7px; color: black;">
           <div class="indent2">
-            <img src="img/twee.svg" style="width: 25px; margin-left: 25px; margin-right: 20px;" alt="Twitter logo" />
+            <img src="img/twee.svg" style="width: 25px; margin-left: 25px; margin-right: 20px;" alt="Twitter logo">
             <span style="margin-right: 5px;" id="twit">
-              <a href="https://www.twitter.com/wietze">@Wietze</a>: </span>
+              <a href="https://www.twitter.com/wietze" target="_blank">@Wietze</a>: See my latest tweets <a href="https://www.twitter.com/wietze" target="_blank">here</a>.</span>
           </div>
         </div>
         <!--googleon: all-->
@@ -90,7 +85,7 @@
           <td class="entry-date"><time datetime="2022-08">August 2022</time></td>
           <td class="box">
             <div class="block entry"><div><span class="publication-type">Presentation</span><strong
-                title="Beukema, W.J.B. (2022, August). Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint. DEF CON 30.">Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint</strong> &ndash; DEF&nbsp;CON&nbsp;30 <span class="addendum">Also&nbsp;presented&nbsp;at&nbsp;BSides&nbsp;Roma&nbsp;(<time datetime="2023-01">January&nbsp;2023</time>) and HackCon&nbsp;Norway&nbsp;(<time datetime="2023-02">February&nbsp;2023</time>).</span></div></div>
+                title="Beukema, W.J.B. (2022, August). Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint. DEF CON 30.">Save the Environment (Variable): Hijacking Legitimate Applications with a Minimal Footprint</strong> &ndash; DEF&nbsp;CON&nbsp;30 <span class="addendum">Also&nbsp;presented&nbsp;at&nbsp;BSides&nbsp;Roma&nbsp;(<time datetime="2023-01">January&nbsp;2023</time>), HackCon&nbsp;Norway&nbsp;(<time datetime="2023-02">February&nbsp;2023</time>), BSidesNYC&nbsp;(<time datetime="2023-04">April&nbsp;2023</time>) and Hack&nbsp;in&nbsp;Paris&nbsp;(<time datetime="2023-09">September&nbsp;2023</time>).</span></div></div>
             <div class="block publication-buttons">
               <div class="entry-link">
                 <a href="literature/Beukema,%20WJB%20-%20Save%20The%20Environment%20(Variable).pdf"> </a><a
@@ -323,13 +318,13 @@
 
     <div id="HijackLibs" class="panel panel-primary">
       <div class="panel-heading">
-        <img src="https://hijacklibs.net/assets/img/dll.png" class="ico" alt="ico" />
+        <img src="https://hijacklibs.net/assets/img/dll.png" class="ico" alt="ico">
         <h3 class="panel-title" onclick="$('#hijacklibs-body').toggle();">HijackLibs.net</h3>
       </div>
       <div class="panel-body" id="hijacklibs-body">
         <div style="float: right; margin-left: 10px; max-width: 35%;min-width: 200px;">
           <a href="img/hijacklibs.png">
-            <img src="img/hijacklibs.png" alt="Screenshot of HijackLibs" style="width: 100%; border: 1px solid #aaa;" />
+            <img src="img/hijacklibs.png" alt="Screenshot of HijackLibs" style="width: 100%; border: 1px solid #aaa;">
           </a>
         </div>
         <p>HijackLibs.net provides an curated list of DLL Hijacking candidates. A mapping between DLLs and vulnerable executables is kept and can be searched via this website. Additionally, further metadata such as resources provide more context.</p><p>For defenders, this project can provide valuable information when trying to detect DLL Hijacking attempts. Although detecting DLL Hijacking isn't always without challenge, it is certainly possible to monitor for behaviour that may be indicative of abuse. To further support defenders, out-of-the-box Sigma rules are provided through this website. A Sigma feed containing detection rules for all entries part of this project is available too.</p><p>For red teamers, this project can help identify DLLs that can be used to achieve DLL Hijacking. The aim of this project is not to make it easy to abuse the recorded vulnerabilities; as such, PoCs, code templates or tuturials are not provided.</p>
@@ -351,27 +346,27 @@
             <td class="description"><a href="https://hijacklibs.net/">HijackLibs.net</a></td>
           </tr>
         </table>
-        <br />
+        <br>
       </div>
     </div>
 
     <div id="GemistDownloader" class="panel panel-primary">
       <div class="panel-heading">
-        <img src="img/logo_gd.png" class="ico" alt="ico" />
+        <img src="img/logo_gd.png" class="ico" alt="ico">
         <h3 class="panel-title" onclick="$('#gemistdownloader-body').toggle();">GemistDownloader</h3>
       </div>
       <div class="panel-body" id="gemistdownloader-body">
         <div style="float: right; margin-left: 10px; max-width: 35%;min-width: 200px;">
           <a href="img/gemistdownloader.jpg">
-            <img src="img/gemistdownloader.jpg" alt="Screenshot of GemistDownloader" style="width: 100%;" />
+            <img src="img/gemistdownloader.jpg" alt="Screenshot of GemistDownloader" style="width: 100%;">
           </a>
         </div>
         Freeware program for Windows. GemistDownloader helps users download Dutch TV shows; although it is designed for
         starting computer users, advanced users can use the more powerful features.
-        <br />
-        <br />GemistDownloader has been featured in many Dutch computer magazines.
-        <br />
-        <br />
+        <br>
+        <br>GemistDownloader has been featured in many Dutch computer magazines.
+        <br>
+        <br>
         <table class="compare">
           <tr>
             <td class="factor">Project start</td>
@@ -399,7 +394,7 @@
               <a href="https://www.dutchcowboys.nl/gadgets/18836" target="_blank">DutchCowboys</a>: "Niet zomaar een
               mashup van TV-downloadgereedschap, maar een van de meest stabiele downloadtools
               die ik heb kunnen testen."
-              <br />
+              <br>
               <a href="https://computertotaal.nl/apps-software/gemistdownloader-2-0-20394">ComputerTotaal</a>: "[...]
               het
               gratis programma GemistDownloader [is] echt een uitkomst!" - beoordeling 9/10
@@ -415,29 +410,29 @@
             </td>
           </tr>
         </table>
-        <br />
+        <br>
       </div>
     </div>
 
     <div id="AMBERAlertNL" class="panel panel-primary">
       <div class="panel-heading">
-        <img src="img/logo_amber.png" class="ico" alt="ico" />
+        <img src="img/logo_amber.png" class="ico" alt="ico">
         <h3 class="panel-title" onclick="$('#amber-alert-nl-body').toggle();">AMBER Alert NL</h3>
       </div>
       <div class="panel-body" id="amber-alert-nl-body">
         <div style="float: right; margin-left: 10px; max-width: 17.5%;min-width: 150px;">
           <a href="img/amber.png">
-            <img src="img/amber.png" alt="Screenshot of AMBER Alert NL" style="width: 100%;" />
+            <img src="img/amber.png" alt="Screenshot of AMBER Alert NL" style="width: 100%;">
           </a>
         </div>
         When an AMBER Alert is issued, the photo of the missing child will appear in the users' homescreen. By opening
         the app, users
         can get more information about the missing person.
-        <br />
-        <br /> See also
+        <br>
+        <br> See also
         <a href="https://www.amberalertnederland.nl/News.aspx?newsid=407&lang=en">this press release</a>.
-        <br />
-        <br />
+        <br>
+        <br>
         <table class="compare">
           <tr>
             <td class="factor">Project start</td>
@@ -469,27 +464,27 @@
             </td>
           </tr>
         </table>
-        <br />
+        <br>
       </div>
     </div>
 
     <div id="DeBlauweApp" class="panel panel-primary">
       <div class="panel-heading">
-        <img src="img/logo_bol.png" class="ico" alt="ico" />
+        <img src="img/logo_bol.png" class="ico" alt="ico">
         <h3 class="panel-title" onclick="$('#de-blauwe-app-body').toggle();">De Blauwe App</h3>
       </div>
       <div class="panel-body" id="de-blauwe-app-body">
         <div style="float: right; margin-left: 10px; max-width: 17.5%; min-width: 150px;">
           <a href="img/bol.png">
-            <img src="img/bol.png" alt="Screenshot of De Blauwe App" style="width: 100%;" />
+            <img src="img/bol.png" alt="Screenshot of De Blauwe App" style="width: 100%;">
           </a>
         </div>
         A Windows Phone app for Dutch webshop Bol.com, based on their open API. Search through complete collection, scan
         barcodes,
         see special offers and buy items in-app. A brief demo is available on
         <a href="https://youtu.be/lZl83DCSE2w">YouTube</a>.
-        <br />
-        <br />
+        <br>
+        <br>
         <table class="compare">
           <tr>
             <td class="factor">Project start</td>
@@ -508,7 +503,7 @@
             <td class="description">
               <a href="https://developers.bol.com/nieuws/showcases/nieuws/de-blauwe-app-voor-windows-phone/"
                 target="_blank">Bol.com: showcase</a>
-              <br />
+              <br>
               <a href="https://web.archive.org/web/20120715001948/https://www.wp7.nl/8124/de-blauwe-app-bladeren-op-bol-com-met-je-windows-phone/"
                 target="_blank">WP7.nl</a>: "De Blauwe App is een simpel-ogende, maar erg goed functionerende app."
             </td>
@@ -524,7 +519,7 @@
             </td>
           </tr>
         </table>
-        <br />
+        <br>
       </div>
     </div>
 
@@ -533,23 +528,22 @@
     </div>
     <p class="social-buttons">
       <a href="https://www.linkedin.com/in/wjbbeukema" target="_blank">
-        <img src="img/in.png" alt="LinkedIn" class="socbutton" />
+        <img src="img/in.png" alt="LinkedIn" class="socbutton">
       </a>
       <a href="https://www.twitter.com/wietze" target="_blank">
-        <img src="img/tw.png" alt="Twitter" class="socbutton" style="background: #55acee;" />
+        <img src="img/tw.png" alt="Twitter" class="socbutton" style="background: #55acee;">
       </a>
       <a href="https://www.github.com/wietze" target="_blank">
-        <img src="img/github.png" alt="GitHub" class="socbutton" />
+        <img src="img/github.png" alt="GitHub" class="socbutton">
       </a>
       <a href="https://www.keybase.io/wietze" target="_blank">
-        <img src="img/kb.png" alt="Keybase" class="socbutton" />
+        <img src="img/kb.png" alt="Keybase" class="socbutton">
       </a>
     </p>
   </div>
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/twit.js"></script>
   <script>var a;
     $(document).ready(function () {
 
