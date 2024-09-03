@@ -5,7 +5,7 @@ tldr: The first argument of a program's command line, typically reflecting the p
 image: /assets/2024-09-03-argv0-spoofing-on-windows.png
 tags: [argv&lsqb;0&rsqb;, argv0, argv, arg&lsqb;0&rsqb;, arg0, command line, command-line, cmd, command-line obfuscation, command-line bypass, edr obfuscation]
 js: false
-#tweet:
+tweet: 1830946344841986233
 ---
 
 Command lines are weird. Windows is known for this [[1]], but as will become apparent, most operating systems implemented command lines in a way that can cause security issues. This post will set out, section by section, what's wrong with this widely-adopted convention that the first argument of a process' command line, often referred to as `argv[0]`, is reserved to represent the process' name.
