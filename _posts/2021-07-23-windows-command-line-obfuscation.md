@@ -9,7 +9,7 @@ tweet: 1418562387175690242
 ---
 
 ## Command-line arguments
-> He who wishes to be obeyed must know how to command.  
+> He who wishes to be obeyed must know how to command.
 >
 > Machiavelli (Discourses on Livy III, Chapter XXII)
 
@@ -35,9 +35,9 @@ This has led to a situation in which some programs treat a variety of different 
 ## Problems for detection
 Although being able to express the same command in different ways may be of help to some users, it tends to make detection and prevention efforts harder. Most threat detection software (AV, EDR, and so on) will monitor process executions, and look for command-line arguments that may be indicative of malicious usage. As attackers will want to go undetected, they may take advantage of the flexibility of the command line in an attempt to evade detection. This may range from small tweaks to bypass keyword-based detection, to full-blown command-line obfuscation to hide the original commands.
 
-A good example of obfuscation on command-line level is the the excellent work of Daniel Bohannon, DOSfuscation [[1], [2]], which specifically focusses on the Windows command-line prompt CMD. Even though the executing CMD 'understands' and executes the obfuscated commands, it may look unintelligble to humans, and monitoring software is also likely to be kept in the dark. 
+A good example of obfuscation on command-line level is the the excellent work of Daniel Bohannon, DOSfuscation [[1], [2]], which specifically focusses on the Windows command-line prompt CMD. Even though the executing CMD 'understands' and executes the obfuscated commands, it may look unintelligble to humans, and monitoring software is also likely to be kept in the dark.
 
-The phenomenon of synonymous command-lines goes beyond DOSfuscation, as it applies to many more programs than just CMD. The key difference here being that you wouldn't just be fooling the command-line prompt, but the executing program itself. As will be shown later, whilst DOSfuscation efforts may end up in unobfuscated form in the recorders used by detection software, the synonymous command-line arguments will not. 
+The phenomenon of synonymous command-lines goes beyond DOSfuscation, as it applies to many more programs than just CMD. The key difference here being that you wouldn't just be fooling the command-line prompt, but the executing program itself. As will be shown later, whilst DOSfuscation efforts may end up in unobfuscated form in the recorders used by detection software, the synonymous command-line arguments will not.
 
 ## Synonymous command lines: methods
 To see this in action, we will now take a closer look at five different methods that can cause synonymous command lines.
@@ -103,46 +103,46 @@ For the purposes of this post, the PoC was used to analyse over 40 built-in Wind
 {:.data-table}
 | Executable      | Option Char substitution | Character insertion | Character substitution | Quote insertion | Shorthands |
 |----------------------||-------------------------|---------------------|-----------------------|-----------------| ---- |
+| `arp.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/arp.log) | ✔️ (8) | ✔️ (3) | ✔️ | ✔️ | N/a
+| `at.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/at.log) | ❌ | ❌ | ❌ | ✔️ | ✔️ |
 | `bitsadmin.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/bitsadmin.log) | ❌                       | ❌                   | ❌                     | ✔️               |❌ |
+| `cacls.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/cacls.log) | ❌ | ✔️ (3,087) | ✔️ | ✔️ | ✔️
 | `certutil.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/certutil.log)  | ✔️ (5)                   | ✔️ (6)               | ✔️                     | ✔️               |❌ |
-| `csc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/csc.log)       | ✔️ (1)                   | ❌                   | ❌                     | ❌               |✔️ |
-| `cmstp.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/cmstp.log)       | ❌                   | ✔️ (3)                   | ✔️                     | ❌               |❌ |
-| `mpcmdrun.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/mpcmdrun.log)  | ✔️ (1)                   | ❌                   | ❌                     | ✔️               |❌ |
-| `net.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/net.log)       | N/a                     | ✔️ (1)                   | ❌                     | ✔️               | ✔️ |
-| `netsh.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/netsh.log)     | N/a                     | ❌                   | ❌                     | ✔️               |❌ |
-| `reg.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/reg.log)       | ✔️ (3)                   | ✔️ (6)               | ✔️                     | ✔️               |❌ |
-| `regsrv32.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/regsrv32.log)  | ✔️ (1)                       | ✔️*                   | ✔️*                     | ✔️               | ✔️* |
-| `sc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/sc.log)        | N/a                     | ❌                   | ❌                     | ✔️               |❌ |
-| `schtasks.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/schtasks.log)  | ✔️ (2)                   | ❌                   | ✔️                     | ✔️               |❌ |
-| `wevtutil.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/wevtutil.log)  | N/a                   | ✔️ (3,369)           | ✔️                     | ✔️               |❌ |
-| `wmic.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/wmic.log)      | N/a                       | ❌                   | ❌                     | ❌               |❌ |
-| `whoami.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/whoami.log)      | ✔️ (2)                        | ❌                   | ❌                     | ✔️               |❌ |
-| `ipconfig.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/ipconfig.log)      | ✔️ (1)                       | ✔️ (3,370)                    | ✔️                     | ✔️               | ❌ |
-| `powershell.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/powershell.log)      | ✔️ (4)                       | ❌                    | ❌                     | ✔️               | ✔️ |
 | `cmdkey.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/cmdkey.log)      | ✔️ (1)                       | ✔️ (1)                    | ❌                     | ✔️               | ✔️ |
+| `cmstp.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/cmstp.log)       | ❌                   | ✔️ (3)                   | ✔️                     | ❌               |❌ |
+| `csc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/csc.log)       | ✔️ (1)                   | ❌                   | ❌                     | ❌               |✔️ |
+| `curl.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/curl.log) | ✔️ (3) | ❌ | ❌ | ❌ | N/a
 | `findstr.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/findstr.log)      | ✔️ (11)                | ❌               |❌                     | ✔️               | ✔️ |
 | `fltmc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/fltmc.log) | N/a | ❌ | ❌ | ✔️ | ❌ |
-| `nslookup.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/nslookup.log) | ✔️ (5) | ✔️* | ✔️* | ✔️ | ✔️* |
-| `tasklist.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/tasklist.log) | ✔️ (2) | ❌ | ❌ | ✔️ | ❌ |
-| `systeminfo.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/systeminfo.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | ❌ |
 | `forfiles.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/forfiles.log) | ❌ | ❌ | ✔️ | ✔️ | N/a |
-| `at.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/at.log) | ❌ | ❌ | ❌ | ✔️ | ✔️ |
-| `route.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/route.log) | N/a | ❌ | ✔️ | ✔️ | ❌
-| `arp.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/arp.log) | ✔️ (8) | ✔️ (3) | ✔️ | ✔️ | N/a
-| `netstat.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/netstat.log) | ✔️ (8) | ❌ | ✔️ | ✔️ | N/a
-| `taskkill.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/taskkill.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | ❌
-| `ping.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/ping.log) | ✔️ (1) | ✔️ (1) | ❌ | ✔️ | ✔️
-| `curl.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/curl.log) | ✔️ (3) | ❌ | ❌ | ❌ | N/a
-| `winrs.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/winrs.log) | ✔️ (1) | ❌ | ❌ | ❌ | ✔️
-| `takeown.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/takeown.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | N/a
-| `vbc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/vbc.log) | ✔️ (1) | ❌ | ❌ | ❌ | ✔️
-| `jsc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/jsc.log) | ✔️ (1) | ❌ | ❌ | ✔️ | ✔️
-| `cacls.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/cacls.log) | ❌ | ✔️ (3,087) | ✔️ | ✔️ | ✔️
 | `icacls.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/icacls.log) | ❌ | ❌ | ❌ | ✔️ | ❌
-| `vssadmin.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/vssadmin.log) | N/a | ❌ | ❌ | ✔️ | ❌
-| `winrm.cmd` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/winrm.log) | ✔️ (1) | ✔️ (1) | ❌ | ❌ | ✔️
-| `robocopy.cmd` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/robocopy.log) | ✔️ (1) | ❌ | ❌ | ❌ | ❌
+| `ipconfig.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/ipconfig.log)      | ✔️ (1)                       | ✔️ (3,370)                    | ✔️                     | ✔️               | ❌ |
+| `jsc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/jsc.log) | ✔️ (1) | ❌ | ❌ | ✔️ | ✔️
+| `mpcmdrun.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/mpcmdrun.log)  | ✔️ (1)                   | ❌                   | ❌                     | ✔️               |❌ |
 | `msiexec.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/msiexec.log) | ✔️ (1) | ❌ | ❌ | ❌ | N/a
+| `net.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/net.log)       | N/a                     | ✔️ (1)                   | ❌                     | ✔️               | ✔️ |
+| `netsh.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/netsh.log)     | N/a                     | ❌                   | ❌                     | ✔️               |❌ |
+| `netstat.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/netstat.log) | ✔️ (8) | ❌ | ✔️ | ✔️ | N/a
+| `nslookup.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/nslookup.log) | ✔️ (5) | ✔️* | ✔️* | ✔️ | ✔️* |
+| `ping.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/ping.log) | ✔️ (1) | ✔️ (1) | ❌ | ✔️ | ✔️
+| `powershell.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/powershell.log)      | ✔️ (4)                       | ❌                    | ❌                     | ✔️               | ✔️ |
+| `reg.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/reg.log)       | ✔️ (3)                   | ✔️ (6)               | ✔️                     | ✔️               |❌ |
+| `regsrv32.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/regsrv32.log)  | ✔️ (1)                       | ✔️*                   | ✔️*                     | ✔️               | ✔️* |
+| `robocopy.cmd` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/robocopy.log) | ✔️ (1) | ❌ | ❌ | ❌ | ❌
+| `route.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/route.log) | N/a | ❌ | ✔️ | ✔️ | ❌
+| `sc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/sc.log)        | N/a                     | ❌                   | ❌                     | ✔️               |❌ |
+| `schtasks.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/schtasks.log)  | ✔️ (2)                   | ❌                   | ✔️                     | ✔️               |❌ |
+| `systeminfo.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/systeminfo.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | ❌ |
+| `takeown.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/takeown.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | N/a
+| `taskkill.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/taskkill.log) | ✔️ (2) | ❌ | ✔️ | ✔️ | ❌
+| `tasklist.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/tasklist.log) | ✔️ (2) | ❌ | ❌ | ✔️ | ❌ |
+| `vbc.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/vbc.log) | ✔️ (1) | ❌ | ❌ | ❌ | ✔️
+| `vssadmin.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/vssadmin.log) | N/a | ❌ | ❌ | ✔️ | ❌
+| `wevtutil.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/wevtutil.log)  | N/a                   | ✔️ (3,369)           | ✔️                     | ✔️               |❌ |
+| `whoami.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/whoami.log)      | ✔️ (2)                        | ❌                   | ❌                     | ✔️               |❌ |
+| `winrm.cmd` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/winrm.log) | ✔️ (1) | ✔️ (1) | ❌ | ❌ | ✔️
+| `winrs.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/winrs.log) | ✔️ (1) | ❌ | ❌ | ❌ | ✔️
+| `wmic.exe` [➡️](https://github.com/wietze/windows-command-line-obfuscation/blob/main/sample_results/wmic.log)      | N/a                       | ❌                   | ❌                     | ❌               |❌ |
 
 <sup><sup>**Notes**:
 1) Windows 10 version 2004 was used for the analysis;
