@@ -9,4 +9,4 @@ footer: yes
 footer_text: "← Go back"
 footer_url: "/"
 permalink: /blog/:title
-favicon_location: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAFVBMVEUAAAAAAAC4iz/Jxcb/wVf/7EX///9nHf7dAAAAAXRSTlMAQObYZgAAAFJJREFUeAFVzVEKBDEMguEYYu5/5LVS1unPEOr3MlWFUyXsksR3j2oEtB6gRr+AguD2hz2RgaEL9LjALQClayDWv4WvYPT52ReUnwUdu0IlqOwfCCAB4pZooF8AAAAASUVORK5CYII="
+favicon_location: "/img/favicon.png"

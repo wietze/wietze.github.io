@@ -86,6 +86,8 @@ Supporting code, which can be used to compile many DLLs at once for the purpose 
 
 Having applied this methodology, the following table lists all executables in `C:\windows\system32` on Windows 11 (21H2) that are vulnerable to environment variable-based DLL Hijacking. The first column shows what environment variable was changed, the second column shows the vulnerable application and the third column shows what DLL was loaded from the altered location (relative to the environment variable). As explained in the previous section, these are not mere theoretical targets, these are **tested and confirmed to be working**. The list comprises 82 executables and 91 unique DLLs.
 
+**Update (2025-03-01)**: _**the results of this research have been included in [HijackLibs](https://hijacklibs.net), which provides a more comprehensive and up-to-date view of DLL Hijacking opportunities.**_
+
 {:.data-table .env-table}
 | Environment variable                                  | Executable                                    | DLL (relative to variable)                               |
 |---------------------------------------------|----------------------------------------|------------------------------------------|

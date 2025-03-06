@@ -100,6 +100,8 @@ A proof-of-concept implementation of this approach [[6]] allows us to quickly an
 
 For the purposes of this post, the PoC was used to analyse over 40 built-in Windows executables often seen being used in attacks.
 
+**Update (2025-03-01)**: _**the results of this research have been included in [ArgFuscator.net](https://argfuscator.net), which provides a more comprehensive and up-to-date view of obfuscation opportunities, as well as the option to generate your own obfuscated command-line arguments.**_
+
 {:.data-table}
 | Executable      | Option Char substitution | Character insertion | Character substitution | Quote insertion | Shorthands |
 |----------------------||-------------------------|---------------------|-----------------------|-----------------| ---- |
