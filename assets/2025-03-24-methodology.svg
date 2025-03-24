@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="578.56" height="193.28" version="1.1" viewBox="0 0 578.56 193.28" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="a">
+   <path d="m78.125 25h1653.1v553.12h-1653.1z" clip-rule="evenodd"/>
+  </clipPath>
+ </defs>
+ <g transform="matrix(.32 0 0 .32 0 6.832e-6)">
+  <g clip-path="url(#a)">
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m110 290h120v60h-120z" fill="#fff"/>
+    <path d="m110 290h120v60h-120z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)">
+    <text transform="translate(122.97 324)" fill="#000000" font-family="Arial" font-size="12px" xml:space="preserve"><tspan x="0 8.0039062 14.677734 17.34375 24.017578 30.017578 33.351562 36.685547 43.359375 50.033203 56.707031 59.373047 62.039062 68.039062 74.712891 78.046875 80.712891 87.386719" y="0">Select application</tspan></text>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m270 290h120v60h-120z" fill="#fff"/>
+    <path d="m270 290h120v60h-120z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)" fill="#000000" font-family="Arial" font-size="12px">
+    <text transform="translate(294.31 317)" xml:space="preserve"><tspan x="0 8.0039062 10.669922 17.34375 23.34375 29.34375 36.017578 42.691406 48.691406 52.025391 55.359375 62.033203 68.033203" y="0">Blackbox test</tspan></text>
+    <text transform="translate(278.3 332)" xml:space="preserve"><tspan x="0 6.6738281 13.347656 16.681641 23.355469 29.355469 35.355469 42.029297 45.363281 48.029297 54.703125 61.376953 64.710938 71.384766 78.058594 81.392578 84.058594 90.732422 97.40625" y="0">obfuscation options</tspan></text>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m430 290h120v60h-120z" fill="#fff"/>
+    <path d="m430 290h120v60h-120z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)">
+    <text transform="translate(444.64 324)" fill="#000000" font-family="Arial" font-size="12px" xml:space="preserve"><tspan x="0 8.6660156 12.662109 19.335938 26.009766 29.34375 36.017578 39.351562 49.347656 56.021484 62.695312 69.369141 72.035156 75.369141 78.703125 81.369141 84.035156" y="0">Create model file</tspan></text>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m590 290h120v60h-120z" fill="#fff"/>
+    <path d="m590 290h120v60h-120z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)">
+    <text transform="translate(611.64 324)" fill="#000000" font-family="Arial" font-size="12px" xml:space="preserve"><tspan x="0 6 12.673828 18.673828 22.007812 25.341797 35.337891 42.011719 48.685547 55.359375 58.025391 61.359375 64.693359 67.359375 70.025391" y="0">Test model file</tspan></text>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m590 390h120v60h-120z" fill="#dae8fc"/>
+    <path d="m590 390h120v60h-120z" fill="none" stroke="#6c8ebf" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)">
+    <text transform="translate(619.98 424)" fill="#000000" font-family="Arial" font-size="12px" xml:space="preserve"><tspan x="0 8.0039062 14.677734 20.677734 24.011719 28.007812 34.681641 40.681641 44.015625 46.681641 53.355469" y="0">Abstraction</tspan></text>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -216.69 -656.65)">
+    <path d="m230 320h33.63" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m268.88 320-7 3.5 1.75-3.5-1.75-3.5z"/>
+    <path d="m268.88 320-7 3.5 1.75-3.5-1.75-3.5z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m390 320h33.63" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m428.88 320-7 3.5 1.75-3.5-1.75-3.5z"/>
+    <path d="m428.88 320-7 3.5 1.75-3.5-1.75-3.5z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m551 320h32.63" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m588.88 320-7 3.5 1.75-3.5-1.75-3.5z"/>
+    <path d="m588.88 320-7 3.5 1.75-3.5-1.75-3.5z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m650 350v33.63" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m650 388.88-3.5-7 3.5 1.75 3.5-1.75z"/>
+    <path d="m650 388.88-3.5-7 3.5 1.75 3.5-1.75z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="m649.5 290v-3h1v3zm0-6v-3h1v3zm0-6v-3h1v3zm0-6v-3h1v3zm0-6v-3h1v3zm0.5-5.5h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-6 0h-3v-1h3zm-3.5 1.5v3h-1v-3zm0 6v3h-1v-3zm0 6v3h-1v-3zm0 6v3h-1v-3z"/>
+    <path d="m490 288.88-3.5-7 3.5 1.75 3.5-1.75z"/>
+    <path d="m490 288.88-3.5-7 3.5 1.75 3.5-1.75z" fill="none" stroke="#000" stroke-miterlimit="10"/>
+   </g>
+   <g transform="matrix(2.7336 0 0 2.7336 -218.06 -658.02)">
+    <path d="m550 252h31v13h-31z" fill="#fff"/>
+    <text transform="translate(549.61 262)" fill="#000000" font-family="Arial" font-size="11px" font-style="italic" xml:space="preserve"><tspan x="0 7.9438477 14.061523 17.117676 19.561523 25.679199" y="0">Refine</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>
