@@ -16,7 +16,7 @@ permalink: blog/feed.xml
         <published>{{ post.date | date_to_xmlschema }}</published>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <author><name>@Wietze</name></author>
-        <summary>{{ post.tldr | xml_escape}}</summary>
+        <summary>{{ post.tldr | markdownify | strip_html | xml_escape}}</summary>
         <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.baseurl }}{{ post.image | absolute_url }}" />
         <media:content medium="image" url="{{ site.baseurl }}{{ post.image | absolute_url }}" xmlns:media="http://search.yahoo.com/mrss/" />
     </entry>
