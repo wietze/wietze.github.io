@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Bypassing Detections with Command-Line Obfuscation
-tldr: Defensive tools like AVs and EDRs rely on command-line arguments for detecting malicious activity. This post demonstrates how command-line obfuscation, a shell-independent technique that exploits executables' parsing "flaws", can bypass such detections. It also introduces [ArgFuscator](https://www.argfuscator.net), a new tool that identifies obfuscation opportunities and generates obfuscated command lines.
+tldr: Defensive tools like AVs and EDRs rely on command-line arguments for detecting malicious activity. This post demonstrates how command-line obfuscation, a shell-independent technique that exploits executables' parsing "flaws", can bypass such detections. It also introduces [ArgFuscator](https://www.argfuscator.net), a new tool that documents obfuscation opportunities and generates obfuscated command lines.
 image: /assets/2025-03-24-argfuscator-net.png
 tags: [argfuscator, argfuscation, invoke-argfuscator, invoke-argfuscation, command line, command-line, cmd, command-line obfuscation, dosfuscation, command-line evasion, command-line bypass, parameter bypass, Unicode parameters, argument bypass, Unicode argument, dash, hyphen, invisible characters, quote parameters, quote arguments, flag, switch]
 js: false
-tweet:
+tweet: 1904097884124971407
 ---
 
 ## EDRs ❤️ Command-Line Arguments
