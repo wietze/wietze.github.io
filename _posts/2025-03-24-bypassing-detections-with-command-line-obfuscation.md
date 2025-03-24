@@ -126,7 +126,9 @@ With the introduction of _ArgFuscator.net_ [[31]], all results are now accessibl
 The project doesn't stop there: it also offers the option to obfuscate a user-given command line, using the findings of this research. For any of the 68 supported executables, simply pasting in a command one wishes to obfuscate and clicking "Apply obfuscation" will generate a synonymous command line that according to our research will work as well. The website comes with an advanced editor that allows users to disable certain obfuscation types, change the probability with which techniques are applied, or even write their own model files.
 
 <video width="100%" controls loop>
-  <source src="/assets/2025-03-24-argfuscator-net.mp4" type="video/mp4">
+  <source src="/assets/2025-03-24-argfuscator-net.h264.mp4" type='video/mp4; codecs="avc1.42E01E"'>
+  <source src="/assets/2025-03-24-argfuscator-net.mp4" type='video/mp4; codecs="avc1.42E01E"'>
+  <source src="/assets/2025-03-24-argfuscator-net.webm" type='video/webm; codecs="vp9"'>
   (A video demonstrating how a `certutil.exe` command attempting to download a file is blocked by Windows Defender, but when obfuscated using _ArgFuscator.net_, it works without issue.)
 </video>
 _A video demonstrating how a `certutil.exe` command attempting to download a file [[33]] is blocked by Windows Defender, but when obfuscated using [ArgFuscator.net](https://argfuscator.net), it works without issue._
