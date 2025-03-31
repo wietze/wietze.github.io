@@ -11,7 +11,7 @@
     <meta name="twitter:creator" content="@Wietze">{% if page.tldr %}
     <meta name="description" content="{{ page.tldr | markdownify | strip_html | smartify }}">
     <meta property="og:description" content="{{ page.tldr | markdownify | strip_html | smartify }}">
-    <meta property="twitter:description" content="{{ page.tldr | markdownify | strip_html | smartify }}">{% endif %}
+    <meta name="twitter:description" content="{{ page.tldr | markdownify | strip_html | smartify }}">{% endif %}
     <meta property="og:title" content="{{ page.title | markdownify | strip_html | smartify }}">
     <meta property="og:type" content="article">
     <meta property="og:article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
