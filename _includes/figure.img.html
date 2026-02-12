@@ -1,0 +1,4 @@
+<figure class="image" itemscope itemtype="https://schema.org/ImageObject">
+  <a href="{{ include.url }}"><img src="{{ include.url }}" alt="{{ include.description | markdownify | strip_html | smartify }}"></a>
+  <figcaption itemprop="description">{{ include.description | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
+</figure>

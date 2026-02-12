@@ -3,23 +3,25 @@
 @font-face {
     font-family: 'noto';
     src: url('/assets/notoserif-bold-webfont.woff2') format('woff2'),
-         url('/assets/notoserif-bold-webfont.woff') format('woff');
+        url('/assets/notoserif-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 
 }
+
 @font-face {
     font-family: 'noto';
     src: url('/assets/notoserif-italic-webfont.woff2') format('woff2'),
-         url('/assets/notoserif-italic-webfont.woff') format('woff');
+        url('/assets/notoserif-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 
 }
+
 @font-face {
     font-family: 'noto';
     src: url('/assets/notoserif-regular-webfont.woff2') format('woff2'),
-         url('/assets/notoserif-regular-webfont.woff') format('woff');
+        url('/assets/notoserif-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -33,35 +35,43 @@ html {
     margin: 0;
     padding: 0;
 }
+
 body {
     margin: 0;
     font-family: 'noto';
     height: 100%;
 }
+
 a {
     text-decoration: none;
     color: $accent;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 hr {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 h1 {
     font-size: 32px;
 }
+
 h1>code {
     font-size: 24px;
 }
+
 header>p {
     font-style: italic;
 }
-header>p::before{
-    content:"TL;DR – ";
+
+header>p::before {
+    content: "TL;DR – ";
     font-weight: bold;
 }
 
@@ -74,6 +84,7 @@ header>p::before{
     /*color: white;*/
     display: inline-block;
 }
+
 .navbar {
     padding: 20px;
     /*background-color: #2F638B;
@@ -88,17 +99,21 @@ header>p::before{
     padding: 5px 0 5px 0;
     margin-left: 20px;
 }
+
 .nav-list {
     list-style-type: none;
     margin: 0 5px 0 10px;
 }
+
 .alignable {
     display: inline-block;
 }
+
 .pull-left {
     @extend .alignable;
     float: left;
 }
+
 .pull-right {
     @extend .alignable;
     float: right;
@@ -110,6 +125,7 @@ header>p::before{
     max-width: $max-width;
     margin: auto;
 }
+
 .wrapper {
     min-height: 100%;
 }
@@ -121,10 +137,10 @@ header>p::before{
 /* Institute Image */
 
 #ins-logo {
-	margin: auto;
-	display: block;
-	max-height: 100px;
-	text-align: center;
+    margin: auto;
+    display: block;
+    max-height: 100px;
+    text-align: center;
 }
 
 /* Mobile */
@@ -140,37 +156,43 @@ header>p::before{
     .container {
         max-width: 83%;
     }
+
     .navbar-ul {
         margin-top: 5px;
     }
 }
 
 @media (max-width: 500px) {
-	.navbar {
-		text-align: center;
-		padding: 50px 0px 0px 0px;
-	}
-	#author-name {
-		width: 100%;
-		float: none;
-	}
-	#navlist {
-		padding: 10px 0 10px 0;
-		margin: 0;
-		display: block;
-		float: none;
-		text-align: center;
-		width: 100%;
-	}
-	#navlist li.alignable {
-		display: inline-block;
-	}
-	#navlist li.pull-left {
-		float: none;
-	}
-	#navlist li.nav-list {
-		margin: 0;
-	}
+    .navbar {
+        text-align: center;
+        padding: 50px 0px 0px 0px;
+    }
+
+    #author-name {
+        width: 100%;
+        float: none;
+    }
+
+    #navlist {
+        padding: 10px 0 10px 0;
+        margin: 0;
+        display: block;
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    #navlist li.alignable {
+        display: inline-block;
+    }
+
+    #navlist li.pull-left {
+        float: none;
+    }
+
+    #navlist li.nav-list {
+        margin: 0;
+    }
 }
 
 .post_date {
@@ -245,11 +267,12 @@ header>p::before{
 .hijack-table td:nth-child(1) {
     text-align: center;
 }
+
 .hijack-table th:nth-child(1) {
     width: 50px;
 }
 
-.env-table th:nth-child(1){
+.env-table th:nth-child(1) {
     width: max-content
 }
 
@@ -264,6 +287,46 @@ header>p::before{
 #tweet iframe {
     border: none !important;
     box-shadow: none !important;
+}
+
+figure.video,
+figure.image {
+    width: 100%;
+    margin: 0;
+}
+
+figcaption {
+    font-size: small;
+    font-style: italic;
+}
+
+.bytes {
+    float: right;
+    width: 55%;
+    margin: 0;
+    margin-left: 1em;
+    background-color: #eee;
+    padding: 0.5em;
+    font-size: small;
+    box-sizing: border-box;
+}
+
+.bytes>div {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    font-family: consolas, mono;
+}
+
+@media (max-width: 700px) {
+    .bytes {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+video {
+    width: 100%
 }
 
 @import "typography";

@@ -1,6 +1,10 @@
+:root {
+  --code-bg-color: #333;
+}
+
 code {
-    background: #333;
-    color: white;
+    background: var(--code-bg-color);
+    color: contrast-color(var(--code-bg-color));
     padding: 3px;
     display: inline-block;
     max-width: 100%;

@@ -1,0 +1,7 @@
+<figure class="video" itemscope itemtype="https://schema.org/VideoObject">
+  <video controls loop aria-label="{{ include.description | markdownify | strip_html | smartify }}">
+    <source src="{{ include.url }}" type='{{ include.codec }}'>
+    Your browser does not support the video tag.
+  </video>
+  <figcaption itemprop="description">{{ include.description | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
+</figure>
