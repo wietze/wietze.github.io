@@ -5,7 +5,7 @@ tldr: Windows' primary mechanism for shortcuts, LNK files, is frequently abused 
 image: /assets/2026-02-12-lnk.png
 tags: [lnk, shortcut, CVE-2025-9491, lnk files, shortcut files, lnk spoofing, shortcut spoofed, lnk vulnerability, lnk abuse, malicious shortcuts, attacker shortcuts, bad lnks]
 js: false
-# tweet: TBD
+tweet: 2022053455792132370
 ---
 
 ## Shortcuts in Windows
