@@ -315,7 +315,7 @@ figcaption {
     display: flex;
     gap: 2px;
     flex-wrap: wrap;
-    font-family: consolas, mono;
+    font-family: consolas, mono, monospace;
 }
 
 @media (max-width: 700px) {
