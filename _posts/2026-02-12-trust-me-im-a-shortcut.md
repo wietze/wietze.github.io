@@ -208,7 +208,7 @@ As discussed before, the LNK format can specify command-line arguments with a le
 The original post highlighting this [[22]] describes how threat actors have been observed to pad with plain spaces (`\x20`) or tabs (`\x09`). When viewing the Properties dialog of such LNKs, it immediately suggests something is off.
 The same post mentions a more stealthy approach, in which line feeds (`\n`, i.e. `\x0A`) and carriage returns (`\r`, i.e. `\x0D`) are used. This works because Windows treats these characters as whitespace, and are rendered in Explorer as a single character, even when repeated many times.
 
-{% include figure.vid.html url='/assets/2026-02-12-cve.mp4' description="A video demonstrating CVE-2025-9491 on Windows 11 25H2, with Windows Defender disabled. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
+{% include figure.vid.html url='/assets/2026-02-12-cve.mp4' title="Demo of CVE-2025-9491" description="A video demonstrating CVE-2025-9491 on Windows 11 25H2, with Windows Defender disabled. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
 
 This is useful, because:
@@ -227,7 +227,7 @@ Now consider this similar variant, which is lesser known despite having been doc
 
 When `HasExpString` is specified, and an `EnvironmentVariableDataBlock` is specified with a `TargetAnsi`/`TargetUnicode` value of just null bytes, Explorer does two unexpected things. First, it disables the target field, meaning the target field becomes read-only and cannot be selected. Secondly, it hides the command-line arguments; yet when the LNK is opened, it still passes them on.
 
-{% include figure.vid.html url='/assets/2026-02-12-example1.mp4' description="A video demonstrating a shortcut that suggests it will open a blank Windows Terminal, but upon opening executing `mshta.exe` code. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
+{% include figure.vid.html url='/assets/2026-02-12-example1.mp4' title="Trust me, I have an ExpString" description="A video demonstrating a shortcut that suggests it will open a blank Windows Terminal, but upon opening executing `mshta.exe` code. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
 
 This is useful, because:
@@ -250,7 +250,7 @@ Now, which does Explorer prefer when both are defined? By default, it will show 
 
 However, it turns out that Explorer does something unexpected if you provide a path to the `EnvironmentVariableDataBlock` that does not meet Windows' file path definition: although it _shows_ the value of `EnvironmentVariableDataBlock` in the Properties dialog, upon realising the path is invalid, it falls back to the value provided in `LinkTargetIDList`, which is not visible in the UI at all. This can lead to the strange situation in which Explorer will show one target in the Properties dialog, but executes a completely different one when the LNK is opened.
 
-{% include figure.vid.html url='/assets/2026-02-12-example2.mp4' description="A video demonstrating a shortcut to (seemingly) `README.pdf`, but when opened, executing Windows Calculator. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
+{% include figure.vid.html url='/assets/2026-02-12-example2.mp4' title="Trust me, ''I know what I'm doing''" description="A video demonstrating a shortcut to (seemingly) `README.pdf`, but when opened, executing Windows Calculator. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
 
 Generating an invalid Windows path does not have to be difficult: simply including one of Windows' reserved path characters will do [[24]]. For example, setting `EnvironmentVariableDataBlock` to `"c:\path2.exe"` (note the double-quote characters at the start and end) will make the path appear valid, even though it is not: double quotes are not allowed in Windows paths.
@@ -270,11 +270,9 @@ Let's look another, previously undocumented example. There is yet another place 
 
 Here is when again something unexpected happens: if you specify the `HasExpString` flag and `EnvironmentVariableDataBlock` is set to any value; then also set the `HasLinkTargetIDList` flag and provide a non-conforming `LinkTargetIDList` value, the `LinkInfo` field is used as a fallback to identify the "real" path. Yet for unclear reasons, Explorer's Properties window will display the `EnvironmentVariableDataBlock` value, despite never actually executing it.
 
-<!-- diagram -->
-
 This results in the strange situation where the user sees one path in the Target field, but upon execution, a completely other path is executed. Due to the field being disabled, it is also possible to "hide" any command-line arguments that are provided.
 
-{% include figure.vid.html url='/assets/2026-02-12-example3.mp4' description="A video demonstrating a shortcut to (seemingly) `c:\README.txt`, but when opening, executing Windows Calculator. Note that this was tested on Windows 11 23H2. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
+{% include figure.vid.html url='/assets/2026-02-12-example3.mp4' title="Trust me, I have a valid LinkTargetIDList" description="A video demonstrating a shortcut to (seemingly) `c:\README.txt`, but when opening, executing Windows Calculator. Note that this was tested on Windows 11 23H2. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 23H2, 22631.6060 -->
 
 This behaviour is useful, because:
@@ -294,7 +292,7 @@ Bringing it all together, consider this final example that, despite its relative
 
 As discussed earlier, the `EnvironmentVariableDataBlock` has a somewhat unusual structure: regardless of whether or not the `IsUnicode` flag is set, the block includes a fixed-length field for both ANSI and Unicode (`TargetAnsi` and `TargetUnicode`, respectively) [[25]]. What happens if you only provide one of them? When you set only `TargetAnsi` and fill out `TargetUnicode` with NULL bytes, Explorer realises something is wrong and will show the `LinkTargetIDList` value in the Properties dialog instead. It also disables the Target field and for reasons unclear, it hides any command-line arguments provided. However, when you execute the LNK something weird happens: it still executes the ANSI value in the `EnvironmentVariableDataBlock`, _with_ any command-line arguments present.
 
-{% include figure.vid.html url='/assets/2026-02-12-example4.mp4' description="A video demonstrating a shortcut to (seemingly) `c:\your-invoice.pdf`, but when opened, executing Windows PowerShell code. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
+{% include figure.vid.html url='/assets/2026-02-12-example4.mp4' title="Trust me, I have a Unicode target" description="A video demonstrating a shortcut to (seemingly) `c:\your-invoice.pdf`, but when opened, executing Windows PowerShell code. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
 
 Unlike the previous variant we looked at, opening the LNK executes the "actual" target immediately, not having to open it twice. Additionally, because in this case the spoofed target is in `LinkTargetIDList` and the actual target in `EnvironmentVariableDataBlock`, the actual target may utilise environment variables.

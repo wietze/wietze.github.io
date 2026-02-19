@@ -4,4 +4,7 @@
     Your browser does not support the video tag.
   </video>
   <figcaption itemprop="description">{{ include.description | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
+  <meta itemprop="uploadDate" content="{{ include.url | split:'/' | last | slice: 0,10 }}" />
+  <meta itemprop="name" content="{{ include.title | smartify }}" />
+  <meta itemprop="thumbnailUrl" content="{{ include.url }}" />
 </figure>
