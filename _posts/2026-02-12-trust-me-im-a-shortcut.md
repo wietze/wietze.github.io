@@ -203,7 +203,7 @@ Object.entries(data2).forEach(([k, [v, comment]]) => {
 
 With this background in mind, let's start by understanding the much-debated [[17], [18]] CVE-2025-9491 that has been abused in the wild for quite some time [[19]].
 
-As discussed before, the LNK format can specify command-line arguments with a length of up to 65,536 characters [[20]]. For whatever reason, in Explorer, the Target field only displays the first 256 characters of a command-line string. As such, it is possible to "hide" command-line arguments by padding the provided command-line arguments: whitespaces for example are typically ignored by the target process [[21]]. This means that although the target program will receive the full, padded command-line arguments, in most cases it will ignore all whitespace and simply interpret the remainder of the command-line argument string.
+As discussed before, the LNK format can specify command-line arguments with a length of up to 65,536 characters [[20]]. For whatever reason, in Explorer, the Target field only displays the first 260 characters of a command-line string. As such, it is possible to "hide" command-line arguments by padding the provided command-line arguments: whitespaces for example are typically ignored by the target process [[21]]. This means that although the target program will receive the full, padded command-line arguments, in most cases it will ignore all whitespace and simply interpret the remainder of the command-line argument string.
 
 The original post highlighting this [[22]] describes how threat actors have been observed to pad with plain spaces (`\x20`) or tabs (`\x09`). When viewing the Properties dialog of such LNKs, it immediately suggests something is off.
 The same post mentions a more stealthy approach, in which line feeds (`\n`, i.e. `\x0A`) and carriage returns (`\r`, i.e. `\x0D`) are used. This works because Windows treats these characters as whitespace, and are rendered in Explorer as a single character, even when repeated many times.
@@ -238,17 +238,17 @@ This is useful, because:
 Its effectiveness is limited by:
 
 * The target executable is still visible. Thus, if the target does not match the presented goal, it stands out as anomalous; and,
-* Targets with environment variables cannot be used, due to the flaw's reliance on `TargetIDList`s.
+* Targets with environment variables cannot be used, due to the flaw's reliance on `LinkTargetIDList`s.
 
 It is therefore similar to CVE-2025-9491's behaviour, but has the advantage of being less easily detected due to it not having padded command lines.
 
 ### Variant 2: Trust me, ""I know what I'm doing""
 
-At this point, let's look at a new variant that has, to my knowledge, not been documented before. The LNK File Definition shows that it is possible to specify a target in multiple places. For example, one can set the `HasTargetIDList` and `HasExpString` flags and provide the a path as in the `TargetIDList` structure and one in the `EnvironmentVariableDataBlock` structure.
+At this point, let's look at a new variant that has, to my knowledge, not been documented before. The LNK File Definition shows that it is possible to specify a target in multiple places. For example, one can set the `HasTargetIDList` and `HasExpString` flags and provide a path in the `LinkTargetIDList` structure and another path in the `EnvironmentVariableDataBlock` structure.
 
-Now, which does Explorer prefer when both are defined? By default, it will show the Environment Variable version. Even if you set conflicting values, e.g. if `TargetIDList` is set to `c:\file1.exe` and the `EnvironmentVariableDataBlock` to `c:\file2.exe`, the latter will take precedence: `file2.exe` will be shown in the Properties dialog, and will be executed when the LNK is opened. In this scenario, if `c:\file2.exe` does not exist, you will be told so - even if `c:\file1.exe` _does_ exist. The `TargetIDList` version is thus completely ignored here.
+Now, which does Explorer prefer when both are defined? By default, it will show the Environment Variable version. Even if you set conflicting values, e.g. if `LinkTargetIDList` is set to `c:\file1.exe` and the `EnvironmentVariableDataBlock` to `c:\file2.exe`, the latter will take precedence: `file2.exe` will be shown in the Properties dialog, and will be executed when the LNK is opened. In this scenario, if `c:\file2.exe` does not exist, you will be told so - even if `c:\file1.exe` _does_ exist. The `LinkTargetIDList` version is thus completely ignored here.
 
-However, it turns out that Explorer does something unexpected if you provide a path to the `EnvironmentVariableDataBlock` that does not meet Windows' file path definition: although it _shows_ the value of `EnvironmentVariableDataBlock` in the Properties dialog, upon realising the path is invalid, it falls back to the value provided in `TargetIDList`, which is not visible in the UI at all. This can lead to the strange situation in which Explorer will show one target in the Properties dialog, but executes a completely different one when the LNK is opened.
+However, it turns out that Explorer does something unexpected if you provide a path to the `EnvironmentVariableDataBlock` that does not meet Windows' file path definition: although it _shows_ the value of `EnvironmentVariableDataBlock` in the Properties dialog, upon realising the path is invalid, it falls back to the value provided in `LinkTargetIDList`, which is not visible in the UI at all. This can lead to the strange situation in which Explorer will show one target in the Properties dialog, but executes a completely different one when the LNK is opened.
 
 {% include figure.vid.html url='/assets/2026-02-12-example2.mp4' description="A video demonstrating a shortcut to (seemingly) `README.pdf`, but when opened, executing Windows Calculator. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
@@ -262,7 +262,7 @@ This behaviour is useful, because:
 Its effectiveness is limited by:
 
 * If command-line arguments are present, they will be visible (unless this technique is combined with e.g. CVE-2025-9491); and,
-* Targets with environment variables cannot be used, due to the flaw's reliance on `TargetIDList`s.
+* Targets with environment variables cannot be used, due to the flaw's reliance on `LinkTargetIDList`s.
 
 ### Variant 3: Trust me, I have a valid LinkTargetIDList
 
@@ -285,7 +285,7 @@ This behaviour is useful, because:
 Its effectiveness is limited by:
 
 * The LNK has to be executed twice; the first time the LNK will repair itself without executing anything, the second time the execution will take place.
-* Targets with environment variables cannot be used, due to the flaw's reliance on `TargetIDList` and `LinkInfo`.
+* Targets with environment variables cannot be used, due to the flaw's reliance on `LinkTargetIDList` and `LinkInfo`.
 * In Windows 11 24H2, this trick no longer appears to be working.
 
 ### Variant 4: Trust me, I have a Unicode target
@@ -297,7 +297,7 @@ As discussed earlier, the `EnvironmentVariableDataBlock` has a somewhat unusual 
 {% include figure.vid.html url='/assets/2026-02-12-example4.mp4' description="A video demonstrating a shortcut to (seemingly) `c:\your-invoice.pdf`, but when opened, executing Windows PowerShell code. The shortcut was created with [lnk-it-up](#prevention-and-detection)." codec='video/mp4; codecs="avc1.640028"' %}
 <!-- Run on Windows 11 25H2, 26200.6584 -->
 
-Unlike the previous variant we looked at, opening the LNK executes the "actual" target immediately, not having to open it twice. Additionally, because in this case the spoofed target is in `TargetIdList` and the actual target in `EnvironmentVariableDataBlock`, the actual target may utilise environment variables.
+Unlike the previous variant we looked at, opening the LNK executes the "actual" target immediately, not having to open it twice. Additionally, because in this case the spoofed target is in `LinkTargetIDList` and the actual target in `EnvironmentVariableDataBlock`, the actual target may utilise environment variables.
 
 This behaviour is useful, because:
 
