@@ -22,13 +22,14 @@
   <div style="width: 100%; min-height: 230px; background-color: #2F638B;">
     <div class="container">
       <div class="jumbotron row" style=" padding: 15px 0; background-color: rgba(0,0,0,0); margin: 20px 0;">
-        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding: 0;">
-          <div style="float: left; width: 100%; max-width: 175px; height: 100%; margin-right: 20px;" id="avatar">
-            <img src="https://s.gravatar.com/avatar/65643c7a5680cb9f2e4be9a003cbf999?s=200" style="width: 100%; height: 100%; border: 1px solid white;" alt="Photo of Wietze">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding: 0; display: flex; gap: 20px;">
+          <div style="width: 200px;" id="avatar">
+            <img src="https://s.gravatar.com/avatar/0b0e64a74dee28814ac6e44a133ad8644e0d337a84a2c28ba6c06892b170d096?s=200" alt="Photo of Wietze">
           </div>
+          <div>
           <h1 style="font-size: 45px; font-weight: bold; margin: 0; margin-bottom: 10px; color: white;"
             class="namess">Wietze Beukema</h1>
-          <div class="text-info" style="font-size: 16px; color: #C2BEBE; margin-bottom: 0; display: table-cell;">
+          <div class="text-info" style="font-size: large; color: #C2BEBE; margin-bottom: 0; display: table-cell;">
 
             <div class="indent">
               <i class="fas fa-briefcase intro-icons"></i>Cyber Threat Detection
@@ -42,10 +43,10 @@
               <i class="fas fa-globe-europe intro-icons"></i>London, United Kingdom
             </div>
           </div>
+          </div>
         </div>
         <!--googleoff: all-->
-        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"
-          style="background: white; border-radius: 3px; margin-top: 20px; padding: 7px; color: black;">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 tweet">
           <div class="indent2">
             <img src="img/twee.svg" style="width: 25px; margin-left: 25px; margin-right: 20px;" alt="Twitter logo">
             <span style="margin-right: 5px;" id="twit">
@@ -394,8 +395,8 @@
       </div>
       <div class="panel-body" id="hijacklibs-body">
         <div style="float: right; margin-left: 10px; max-width: 35%;min-width: 200px;">
-          <a href="img/hijacklibs.png">
-            <img src="img/hijacklibs.png" alt="Screenshot of HijackLibs" style="width: 100%; border: 1px solid #aaa;">
+          <a href="img/hijacklibs.jpg">
+            <img src="img/hijacklibs.jpg" alt="Screenshot of HijackLibs" style="width: 100%; border: 1px solid #aaa;">
           </a>
         </div>
         <p>HijackLibs.net provides an curated list of DLL Hijacking candidates. A mapping between DLLs and vulnerable executables is kept and can be searched via this website. Additionally, further metadata such as resources provide more context.</p><p>For defenders, this project can provide valuable information when trying to detect DLL Hijacking attempts. Although detecting DLL Hijacking isn't always without challenge, it is certainly possible to monitor for behaviour that may be indicative of abuse. To further support defenders, out-of-the-box Sigma rules are provided through this website. A Sigma feed containing detection rules for all entries part of this project is available too.</p><p>For red teamers, this project can help identify DLLs that can be used to achieve DLL Hijacking. The aim of this project is not to make it easy to abuse the recorded vulnerabilities; as such, PoCs, code templates or tuturials are not provided.</p>
